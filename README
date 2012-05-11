@@ -1,0 +1,11 @@
+Wrzucam wstêpny projekt naszego licznika. Wejœcia/wyjœcia, które nie maj¹ podanej liczby bitów s¹ jednobitowe. Generalnie to co Ciê interesuje to wejœcia mode i value oraz wyjœcie Ready z modu³u LCD.
+
+mode oznacza tryb pracy wyœwietlacza:
+0 - init, to bêdzie rozkaz inicjalizacji wyœwietlacza po uruchomieniu
+1 - clear, to siê bêdzie u¿ywaæ do wyczyszczenia ekranu (przejœcie w stan IDLE)
+2 - tryb wyœwietlania prêdkoœci
+3 - tryb wyœwietlania drogi
+
+value to wartoœæ wyœwietlana na wyœwietlaczu (tzn droga lub prêdkoœæ). Mo¿na siê zastanowiæ ile bitów mo¿na na to przeznaczyæ, da³em 8 ale chyba lepiej bêdzie daæ 16, ¿eby licznik przejechanej drogi mia³ wiêkszy zakres.
+
+Ready to bit który ustawiasz na 1 w momencie kiedy jesteœ gotowy przyj¹æ now¹ wartoœæ. Generalnie w normalnym trybie pracy (2 lub 3) to nie bêdzie mieæ znaczenia bo bêdziesz sobie po prostu pobiera³ te wartoœci pobiera³ swoim tempem, a to ¿e na 100 podanych przeze mnie prêdkoœci wyœwietlisz jedn¹ to nie problem. Ale do rozkazów init i clear to to musi byæ, bo nie mo¿e byæ tak ¿e one bêd¹ nieobs³u¿one, wiêc dopóki Ready bêdzie mia³o 0, ja bede ten rozkaz podtrzymywa³ na mode.
