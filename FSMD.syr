@@ -1,0 +1,507 @@
+Release 13.4 - xst O.87xd (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: FSMD.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "FSMD.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "FSMD"
+Output Format                      : NGC
+Target Device                      : xa3s50-4-vqg100
+
+---- Source Options
+Top Module Name                    : FSMD
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" in Library work.
+Entity <fsmd> compiled.
+Entity <fsmd> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <FSMD> in library <work> (architecture <behavioral>) with generics.
+	width1 = 8
+	width2 = 2
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <FSMD> in library <work> (Architecture <behavioral>).
+	width1 = 8
+	width2 = 2
+Entity <FSMD> analyzed. Unit <FSMD> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <FSMD>.
+    Related source file is "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd".
+WARNING:Xst:647 - Input <LCDready> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <NVRAMinput> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <WheelSize> is used but never assigned. This sourceless signal will be automatically connected to value 11001000.
+    Found finite state machine <FSM_0> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit register for signal <mode>.
+    Found 32-bit register for signal <value>.
+    Found 16-bit register for signal <Counter>.
+    Found 16-bit adder for signal <Counter$addsub0000> created at line 96.
+    Found 16-bit comparator greatequal for signal <Counter$cmp_ge0000> created at line 88.
+    Found 32-bit register for signal <Distance>.
+    Found 32-bit adder for signal <Distance$add0000> created at line 116.
+    Found 32-bit adder for signal <Distance$addsub0000> created at line 91.
+    Found 16x16-bit multiplier for signal <Distance$mult0000> created at line 91.
+    Found 16x16-bit multiplier for signal <Distance$mult0001> created at line 116.
+    Found 8x8-bit multiplier for signal <Distance$mult0002> created at line 116.
+    Found 1-bit register for signal <oldRotSignal>.
+    Found 8-bit register for signal <Rotations>.
+    Found 8-bit adder for signal <Rotations$add0000> created at line 108.
+    Found 16x16-bit multiplier for signal <Speed$mult0000> created at line 90.
+    Found 8x8-bit multiplier for signal <Speed$mult0002> created at line 90.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  91 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   5 Multiplier(s).
+	inferred   1 Comparator(s).
+Unit <FSMD> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 5
+ 16x16-bit multiplier                                  : 3
+ 8x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 4
+ 16-bit adder                                          : 1
+ 32-bit adder                                          : 2
+ 8-bit adder                                           : 1
+# Registers                                            : 6
+ 1-bit register                                        : 1
+ 16-bit register                                       : 1
+ 2-bit register                                        : 1
+ 32-bit register                                       : 2
+ 8-bit register                                        : 1
+# Comparators                                          : 1
+ 16-bit comparator greatequal                          : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <State/FSM> on signal <State[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 010
+ 100   | 110
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Multipliers                                          : 5
+ 16x16-bit multiplier                                  : 3
+ 8x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 4
+ 16-bit adder                                          : 1
+ 32-bit adder                                          : 2
+ 8-bit adder                                           : 1
+# Registers                                            : 91
+ Flip-Flops                                            : 91
+# Comparators                                          : 1
+ 16-bit comparator greatequal                          : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <FSMD> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block FSMD, actual ratio is 19.
+PACKER Warning: Lut Mmult_Speed_mult0002_Madd1_lut<8> driving carry Mmult_Speed_mult0002_Madd1_cy<8> can not be packed with the carry due to conflict with the common signal requirement between the LUT inputs and the Carry DI/MAND pins. This would result in an extra LUT for a feedthrough.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 94
+ Flip-Flops                                            : 94
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : FSMD.ngr
+Top Level Output File Name         : FSMD
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 49
+
+Cell Usage :
+# BELS                             : 486
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 38
+#      LUT2                        : 52
+#      LUT2_D                      : 1
+#      LUT3                        : 57
+#      LUT3_D                      : 1
+#      LUT3_L                      : 1
+#      LUT4                        : 83
+#      LUT4_D                      : 3
+#      LUT4_L                      : 59
+#      MULT_AND                    : 1
+#      MUXCY                       : 92
+#      MUXF5                       : 5
+#      VCC                         : 1
+#      XORCY                       : 89
+# FlipFlops/Latches                : 94
+#      FDC                         : 94
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 39
+#      IBUF                        : 5
+#      OBUF                        : 34
+# MULTs                            : 4
+#      MULT18X18                   : 4
+=========================================================================
+PACKER Warning: Lut Mmult_Speed_mult0002_Madd1_lut<8> driving carry Mmult_Speed_mult0002_Madd1_cy<8> can not be packed with the carry due to conflict with the common signal requirement between the LUT inputs and the Carry DI/MAND pins. This would result in an extra LUT for a feedthrough.
+
+Device utilization summary:
+---------------------------
+
+Selected Device : xa3s50vqg100-4 
+
+ Number of Slices:                      156  out of    768    20%  
+ Number of Slice Flip Flops:             94  out of   1536     6%  
+ Number of 4 input LUTs:                297  out of   1536    19%  
+ Number of IOs:                          49
+ Number of bonded IOBs:                  40  out of     63    63%  
+ Number of MULT18X18s:                    4  out of      4   100%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 94    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | IBUF                   | 94    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 22.489ns (Maximum Frequency: 44.466MHz)
+   Minimum input arrival time before clock: 22.795ns
+   Maximum output required time after clock: 7.241ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 22.489ns (frequency: 44.466MHz)
+  Total number of paths / destination ports: 2469801 / 94
+-------------------------------------------------------------------------
+Delay:               22.489ns (Levels of Logic = 33)
+  Source:            Rotations_3 (FF)
+  Destination:       Distance_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: Rotations_3 to Distance_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.720   1.278  Rotations_3 (Rotations_3)
+     LUT3:I1->O            1   0.551   0.869  Rotations_mux0000<5>1_SW0 (N124)
+     LUT4:I2->O           14   0.551   1.382  Rotations_mux0000<5>1 (Mmult_Speed_mult0002_Madd_lut<7>)
+     LUT4:I1->O            8   0.551   1.151  Mmult_Speed_mult0002_Madd_cy<4>11 (Mmult_Speed_mult0002_Madd_cy<4>)
+     LUT3:I2->O            1   0.551   0.000  Mmult_Speed_mult0002_Madd_cy<6>1_G (N167)
+     MUXF5:I1->O           2   0.360   0.903  Mmult_Speed_mult0002_Madd_cy<6>1 (Mmult_Speed_mult0002_Madd_cy<6>)
+     LUT4:I3->O            0   0.551   0.000  Mmult_Speed_mult0002_Madd_xor<9>11 (Mmult_Speed_mult0002_Madd_13)
+     MUXCY:DI->O           1   0.889   0.000  Mmult_Speed_mult0002_Madd1_cy<12> (Mmult_Speed_mult0002_Madd1_cy<12>)
+     XORCY:CI->O           2   0.904   0.877  Mmult_Speed_mult0002_Madd1_xor<13> (Speed_mult0002<14>)
+     MULT18X18:A14->P22   10   4.214   1.329  Mmult_Distance_mult0000 (Distance_mult0000<22>)
+     LUT2:I1->O            1   0.551   0.000  Madd_Distance_addsub0000_lut<10> (Madd_Distance_addsub0000_lut<10>)
+     MUXCY:S->O            1   0.500   0.000  Madd_Distance_addsub0000_cy<10> (Madd_Distance_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<11> (Madd_Distance_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<12> (Madd_Distance_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<13> (Madd_Distance_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<14> (Madd_Distance_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<15> (Madd_Distance_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<16> (Madd_Distance_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<17> (Madd_Distance_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<18> (Madd_Distance_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<19> (Madd_Distance_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<20> (Madd_Distance_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<21> (Madd_Distance_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<22> (Madd_Distance_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<23> (Madd_Distance_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<24> (Madd_Distance_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<25> (Madd_Distance_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<26> (Madd_Distance_addsub0000_cy<26>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<27> (Madd_Distance_addsub0000_cy<27>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<28> (Madd_Distance_addsub0000_cy<28>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<29> (Madd_Distance_addsub0000_cy<29>)
+     MUXCY:CI->O           0   0.064   0.000  Madd_Distance_addsub0000_cy<30> (Madd_Distance_addsub0000_cy<30>)
+     XORCY:CI->O           1   0.904   0.869  Madd_Distance_addsub0000_xor<31> (Distance_addsub0000<31>)
+     LUT3:I2->O            1   0.551   0.000  Distance_mux0000<31> (Distance_mux0000<31>)
+     FDC:D                     0.203          Distance_31
+    ----------------------------------------
+    Total                     22.489ns (13.831ns logic, 8.658ns route)
+                                       (61.5% logic, 38.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 435533 / 92
+-------------------------------------------------------------------------
+Offset:              22.795ns (Levels of Logic = 34)
+  Source:            rotSignal (PAD)
+  Destination:       Distance_31 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rotSignal to Distance_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            11   0.821   1.483  rotSignal_IBUF (rotSignal_IBUF)
+     LUT3:I0->O            1   0.551   0.869  Rotations_mux0000<5>1_SW0 (N124)
+     LUT4:I2->O           14   0.551   1.382  Rotations_mux0000<5>1 (Mmult_Speed_mult0002_Madd_lut<7>)
+     LUT4:I1->O            8   0.551   1.151  Mmult_Speed_mult0002_Madd_cy<4>11 (Mmult_Speed_mult0002_Madd_cy<4>)
+     LUT3:I2->O            1   0.551   0.000  Mmult_Speed_mult0002_Madd_cy<6>1_G (N167)
+     MUXF5:I1->O           2   0.360   0.903  Mmult_Speed_mult0002_Madd_cy<6>1 (Mmult_Speed_mult0002_Madd_cy<6>)
+     LUT4:I3->O            0   0.551   0.000  Mmult_Speed_mult0002_Madd_xor<9>11 (Mmult_Speed_mult0002_Madd_13)
+     MUXCY:DI->O           1   0.889   0.000  Mmult_Speed_mult0002_Madd1_cy<12> (Mmult_Speed_mult0002_Madd1_cy<12>)
+     XORCY:CI->O           2   0.904   0.877  Mmult_Speed_mult0002_Madd1_xor<13> (Speed_mult0002<14>)
+     MULT18X18:A14->P22   10   4.214   1.329  Mmult_Distance_mult0000 (Distance_mult0000<22>)
+     LUT2:I1->O            1   0.551   0.000  Madd_Distance_addsub0000_lut<10> (Madd_Distance_addsub0000_lut<10>)
+     MUXCY:S->O            1   0.500   0.000  Madd_Distance_addsub0000_cy<10> (Madd_Distance_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<11> (Madd_Distance_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<12> (Madd_Distance_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<13> (Madd_Distance_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<14> (Madd_Distance_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<15> (Madd_Distance_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<16> (Madd_Distance_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<17> (Madd_Distance_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<18> (Madd_Distance_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<19> (Madd_Distance_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<20> (Madd_Distance_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<21> (Madd_Distance_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<22> (Madd_Distance_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<23> (Madd_Distance_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<24> (Madd_Distance_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<25> (Madd_Distance_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<26> (Madd_Distance_addsub0000_cy<26>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<27> (Madd_Distance_addsub0000_cy<27>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<28> (Madd_Distance_addsub0000_cy<28>)
+     MUXCY:CI->O           1   0.064   0.000  Madd_Distance_addsub0000_cy<29> (Madd_Distance_addsub0000_cy<29>)
+     MUXCY:CI->O           0   0.064   0.000  Madd_Distance_addsub0000_cy<30> (Madd_Distance_addsub0000_cy<30>)
+     XORCY:CI->O           1   0.904   0.869  Madd_Distance_addsub0000_xor<31> (Distance_addsub0000<31>)
+     LUT3:I2->O            1   0.551   0.000  Distance_mux0000<31> (Distance_mux0000<31>)
+     FDC:D                     0.203          Distance_31
+    ----------------------------------------
+    Total                     22.795ns (13.932ns logic, 8.863ns route)
+                                       (61.1% logic, 38.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 34 / 34
+-------------------------------------------------------------------------
+Offset:              7.241ns (Levels of Logic = 1)
+  Source:            value_31 (FF)
+  Destination:       value<31> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: value_31 to value<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.720   0.877  value_31 (value_31)
+     OBUF:I->O                 5.644          value_31_OBUF (value<31>)
+    ----------------------------------------
+    Total                      7.241ns (6.364ns logic, 0.877ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.19 secs
+ 
+--> 
+
+Total memory usage is 150996 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

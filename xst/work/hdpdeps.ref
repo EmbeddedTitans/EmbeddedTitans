@@ -1,0 +1,15 @@
+V3 7
+FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" 2012/05/28.21:26:57 O.87xd
+EN work/FSMD 1338233220 \
+      FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" \
+      PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877 LB work
+AR work/FSMD/Behavioral 1338233221 \
+      FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" \
+      EN work/FSMD 1338233220
+FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" 2012/05/28.21:20:32 O.87xd
+EN work/nvsram 1338232854 \
+      FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" \
+      PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877
+AR work/nvsram/Behavioral 1338232855 \
+      FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" \
+      EN work/nvsram 1338232854
