@@ -1,0 +1,4 @@
+vhdl work "nvsramSim.vhd"
+vhdl work "nvsram.vhd"
+vhdl work "FSMD.vhd"
+vhdl work "Main.vhd"

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="testfsmd" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/testfsmd/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/rotsignal" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rotsignal</obj_property>
+      <obj_property name="ObjectShortName">rotsignal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/modespeed" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">modespeed</obj_property>
+      <obj_property name="ObjectShortName">modespeed</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/modedist" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">modedist</obj_property>
+      <obj_property name="ObjectShortName">modedist</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/value" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">value[31:0]</obj_property>
+      <obj_property name="ObjectShortName">value[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/rotsignal_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">rotsignal_period</obj_property>
+      <obj_property name="ObjectShortName">rotsignal_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/uut/nvsramSim/dq" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dq[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dq[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/uut/nvsramSim/ce" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ce</obj_property>
+      <obj_property name="ObjectShortName">ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/uut/nvsramSim/oe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">oe</obj_property>
+      <obj_property name="ObjectShortName">oe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/uut/nvsramSim/we" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testfsmd/uut/nvsram/a" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">a[10:0]</obj_property>
+      <obj_property name="ObjectShortName">a[10:0]</obj_property>
+   </wvobject>
+</wave_config>

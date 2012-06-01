@@ -1,15 +1,29 @@
-V3 7
-FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" 2012/05/28.21:26:57 O.87xd
-EN work/FSMD 1338233220 \
+V3 16
+FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" 2012/06/01.13:01:42 O.87xd
+EN work/FSMD 1338548509 \
       FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" \
       PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877 LB work
-AR work/FSMD/Behavioral 1338233221 \
+AR work/FSMD/Behavioral 1338548510 \
       FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" \
-      EN work/FSMD 1338233220
-FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" 2012/05/28.21:20:32 O.87xd
-EN work/nvsram 1338232854 \
+      EN work/FSMD 1338548509
+FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd" 2012/06/01.11:34:11 O.87xd
+EN work/Main 1338548511 \
+      FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd" \
+      PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877 LB work
+AR work/Main/Structural 1338548512 \
+      FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd" \
+      EN work/Main 1338548511 CP work/nvsramSim CP work/nvsram CP work/FSMD
+FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" 2012/06/01.12:53:02 O.87xd
+EN work/nvsram 1338548507 \
       FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" \
       PB ieee/std_logic_1164 1325952872 PB ieee/NUMERIC_STD 1325952877
-AR work/nvsram/Behavioral 1338232855 \
+AR work/nvsram/Behavioral 1338548508 \
       FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" \
-      EN work/nvsram 1338232854
+      EN work/nvsram 1338548507
+FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsramSim.vhd" 2012/06/01.12:49:25 O.87xd
+EN work/nvsramSim 1338548505 \
+      FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsramSim.vhd" \
+      PB ieee/std_logic_1164 1325952872
+AR work/nvsramSim/Behavioral 1338548506 \
+      FL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsramSim.vhd" \
+      EN work/nvsramSim 1338548505

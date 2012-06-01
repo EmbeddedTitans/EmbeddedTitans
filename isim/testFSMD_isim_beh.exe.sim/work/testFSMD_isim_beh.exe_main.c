@@ -27,7 +27,10 @@ int main(int argc, char **argv)
     xsi_register_min_prec_unit(-12);
     ieee_p_2592010699_init();
     ieee_p_1242562249_init();
+    work_a_1112788267_3212880686_init();
+    work_a_0040608560_3212880686_init();
     work_a_0438080501_3212880686_init();
+    work_a_4106914344_1181938964_init();
     work_a_1910706304_2372691052_init();
 
 

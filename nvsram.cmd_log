@@ -1,5 +1,0 @@
-xst -intstyle ise -ifn "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.xst" -ofn "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FSMD.ucf -p xa3s50-vqg100-4 "nvsram.ngc" nvsram.ngd  
-map -intstyle ise -p xa3s50-vqg100-4 -cm area -ir off -pr off -c 100 -o nvsram_map.ncd nvsram.ngd nvsram.pcf 
-par -w -intstyle ise -ol high -t 1 nvsram_map.ncd nvsram.ncd nvsram.pcf 
-trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml nvsram.twx nvsram.ncd -o nvsram.twr nvsram.pcf -ucf FSMD.ucf 

@@ -39,35 +39,47 @@ ARCHITECTURE behavior OF testFSMD IS
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT FSMD
-    PORT(
-         clk : IN  std_logic;
-         rotSignal : IN  std_logic;
-         rst : IN  std_logic;
-         go_i : IN  std_logic;
-         LCDready : IN  std_logic;
-         modeSpeed : IN  std_logic;
-         modeDist : IN  std_logic;
-         NVRAMinput : IN  unsigned(7 downto 0);
-         mode : OUT  unsigned(1 downto 0);
-         value : OUT  unsigned(31 downto 0)
-        );
-    END COMPONENT;
+--    COMPONENT FSMD
+--    PORT(
+--         clk : IN  std_logic;
+--         rotSignal : IN  std_logic;
+--         rst : IN  std_logic;
+--         go_i : IN  std_logic;
+--         LCDready : IN  std_logic;
+--         modeSpeed : IN  std_logic;
+--         modeDist : IN  std_logic;
+--         NVRAMinput : IN  unsigned(7 downto 0);
+--         mode : OUT  unsigned(1 downto 0);
+--         value : OUT  unsigned(31 downto 0)
+--        );
+--    END COMPONENT;
+	 
+	 COMPONENT Main		
+	 PORT(	
+			clk: 	in std_logic;	
+			rst:	in std_logic;	
+			rotSignal: in std_logic;					
+			modeSpeed: in std_logic;
+			modeDist: in std_logic;			
+			value : OUT unsigned(31 downto 0)
+			--tu bêd¹ te¿ wszystkie wyprowadzenia do wyœwietlacza
+		);
+		END COMPONENT;
     
 
    --Inputs
    signal clk : std_logic := '0';
    signal rotSignal : std_logic := '0';
-   signal rst : std_logic := '0';
-   signal go_i : std_logic := '0';
-   signal LCDready : std_logic := '0';
-   signal modeSpeed : std_logic := '0';
+   signal rst : std_logic := '0';   
+	signal modeSpeed : std_logic := '0';
    signal modeDist : std_logic := '0';
-   signal NVRAMinput : unsigned(7 downto 0) := (others => '0');
+	signal value : unsigned(31 downto 0) := to_unsigned(0,32);
+--   signal LCDready : std_logic := '0';   
+--   signal NVRAMinput : unsigned(7 downto 0) := (others => '0');
 
  	--Outputs
-   signal mode : unsigned(1 downto 0);
-   signal value : unsigned(31 downto 0);
+   --signal mode : unsigned(1 downto 0);
+   --signal value : unsigned(31 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 1 ms;
@@ -77,18 +89,27 @@ ARCHITECTURE behavior OF testFSMD IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: FSMD PORT MAP (
-          clk => clk,
+--   uut: FSMD PORT MAP (
+--          clk => clk,
+--          rotSignal => rotSignal,
+--          rst => rst,
+--          go_i => go_i,
+--          LCDready => LCDready,
+--          modeSpeed => modeSpeed,
+--          modeDist => modeDist,
+--          NVRAMinput => NVRAMinput,
+--          mode => mode,
+--          value => value
+--        );
+
+	uut: Main PORT MAP (
+			 clk => clk,
           rotSignal => rotSignal,
-          rst => rst,
-          go_i => go_i,
-          LCDready => LCDready,
+          rst => rst,          
           modeSpeed => modeSpeed,
-          modeDist => modeDist,
-          NVRAMinput => NVRAMinput,
-          mode => mode,
-          value => value
-        );
+          modeDist => modeDist,			
+			 value => value
+	);
 
    -- Clock process definitions
    clk_process :process
@@ -114,12 +135,8 @@ BEGIN
       -- hold reset state for 5 ms.
       wait for 5 ms;	
       		
-      -- insert stimulus here
-		rst <= '1';
-		go_i <= '1';
-		modeSpeed <= '1';
-		wait for clk_period*10;
-		rst <= '0';
+      -- insert stimulus here		
+		modeSpeed <= '1';			
 		wait for clk_period*4000;
 		modeSpeed <= '0';
 		modeDist <= '1';

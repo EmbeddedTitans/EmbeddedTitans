@@ -1,0 +1,642 @@
+Release 13.4 - xst O.87xd (nt)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: Main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Main"
+Output Format                      : NGC
+Target Device                      : xa3s50-4-vqg100
+
+---- Source Options
+Top Module Name                    : Main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsramSim.vhd" in Library work.
+Architecture behavioral of Entity nvsramsim is up to date.
+Compiling vhdl file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" in Library work.
+Architecture behavioral of Entity nvsram is up to date.
+Compiling vhdl file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" in Library work.
+Entity <fsmd> compiled.
+Entity <fsmd> (Architecture <behavioral>) compiled.
+Compiling vhdl file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd" in Library work.
+Architecture structural of Entity main is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Main> in library <work> (architecture <structural>) with generics.
+	width1 = 8
+	width2 = 2
+
+Analyzing hierarchy for entity <nvsramSim> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <nvsram> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <FSMD> in library <work> (architecture <Behavioral>) with generics.
+	width1 = 8
+	width2 = 2
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <Main> in library <work> (Architecture <structural>).
+	width1 = 8
+	width2 = 2
+Entity <Main> analyzed. Unit <Main> generated.
+
+Analyzing Entity <nvsramSim> in library <work> (Architecture <Behavioral>).
+Entity <nvsramSim> analyzed. Unit <nvsramSim> generated.
+
+Analyzing Entity <nvsram> in library <work> (Architecture <Behavioral>).
+INFO:Xst:2679 - Register <A<1>> in unit <nvsram> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <A<0>> in unit <nvsram> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <WE> in unit <nvsram> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <nvsram> analyzed. Unit <nvsram> generated.
+
+Analyzing generic Entity <FSMD> in library <work> (Architecture <Behavioral>).
+	width1 = 8
+	width2 = 2
+Entity <FSMD> analyzed. Unit <FSMD> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <nvsramSim>.
+    Related source file is "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsramSim.vhd".
+    Found 8-bit register for signal <DQ>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <nvsramSim> synthesized.
+
+
+Synthesizing Unit <nvsram>.
+    Related source file is "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd".
+    Register <OE> equivalent to <CE> has been removed
+    Found finite state machine <FSM_0> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <ordy>.
+    Found 1-bit register for signal <CE>.
+    Found 8-bit register for signal <idata>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  10 D-type flip-flop(s).
+Unit <nvsram> synthesized.
+
+
+Synthesizing Unit <FSMD>.
+    Related source file is "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd".
+WARNING:Xst:647 - Input <LCDready> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found finite state machine <FSM_1> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 13                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit register for signal <value>.
+    Found 2-bit register for signal <mode>.
+    Found 1-bit register for signal <NVRAMenable>.
+    Found 16-bit register for signal <Counter>.
+    Found 16-bit adder for signal <Counter$add0000> created at line 104.
+    Found 16-bit comparator greatequal for signal <Counter$cmp_ge0000> created at line 96.
+    Found 32-bit register for signal <Distance>.
+    Found 32-bit adder for signal <Distance$add0000> created at line 124.
+    Found 32-bit adder for signal <Distance$addsub0000> created at line 99.
+    Found 16x16-bit multiplier for signal <Distance$mult0000> created at line 99.
+    Found 16x16-bit multiplier for signal <Distance$mult0001> created at line 124.
+    Found 8x8-bit multiplier for signal <Distance$mult0002> created at line 124.
+    Found 1-bit register for signal <oldRotSignal>.
+    Found 8-bit register for signal <Rotations>.
+    Found 8-bit adder for signal <Rotations$add0000> created at line 116.
+    Found 16x16-bit multiplier for signal <Speed$mult0000> created at line 98.
+    Found 8x8-bit multiplier for signal <Speed$mult0002> created at line 98.
+    Found 8-bit register for signal <WheelSize>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 100 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   5 Multiplier(s).
+	inferred   1 Comparator(s).
+Unit <FSMD> synthesized.
+
+
+Synthesizing Unit <Main>.
+    Related source file is "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd".
+WARNING:Xst:1780 - Signal <valueSignal> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <modeSignal> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <LCDreadySignal> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+Unit <Main> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 5
+ 16x16-bit multiplier                                  : 3
+ 8x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 4
+ 16-bit adder                                          : 1
+ 32-bit adder                                          : 2
+ 8-bit adder                                           : 1
+# Registers                                            : 12
+ 1-bit register                                        : 4
+ 16-bit register                                       : 1
+ 2-bit register                                        : 1
+ 32-bit register                                       : 2
+ 8-bit register                                        : 4
+# Comparators                                          : 1
+ 16-bit comparator greatequal                          : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <FSMD/State/FSM> on signal <State[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 010
+ 100   | 110
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <nvsram/current_state/FSM> on signal <current_state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ idle  | 00
+ load0 | 01
+ load1 | 10
+-------------------
+INFO:Xst:2261 - The FF/Latch <DQ_3> in Unit <nvsramSim> is equivalent to the following 2 FFs/Latches, which will be removed : <DQ_6> <DQ_7> 
+INFO:Xst:2261 - The FF/Latch <DQ_0> in Unit <nvsramSim> is equivalent to the following 4 FFs/Latches, which will be removed : <DQ_1> <DQ_2> <DQ_4> <DQ_5> 
+WARNING:Xst:1710 - FF/Latch <DQ_0> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <idata_0> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <idata_1> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <idata_2> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <idata_4> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <idata_5> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <WheelSize_0> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <WheelSize_1> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <WheelSize_2> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <WheelSize_4> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <WheelSize_5> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Multipliers                                          : 5
+ 16x16-bit multiplier                                  : 3
+ 8x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 4
+ 16-bit adder                                          : 1
+ 32-bit adder                                          : 2
+ 8-bit adder                                           : 1
+# Registers                                            : 118
+ Flip-Flops                                            : 118
+# Comparators                                          : 1
+ 16-bit comparator greatequal                          : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <DQ_0> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_1> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_2> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_4> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_5> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <DQ_3> in Unit <nvsramSim> is equivalent to the following 2 FFs/Latches, which will be removed : <DQ_6> <DQ_7> 
+INFO:Xst:2261 - The FF/Latch <idata_3> in Unit <nvsram> is equivalent to the following 2 FFs/Latches, which will be removed : <idata_6> <idata_7> 
+INFO:Xst:2261 - The FF/Latch <idata_0> in Unit <nvsram> is equivalent to the following 4 FFs/Latches, which will be removed : <idata_1> <idata_2> <idata_4> <idata_5> 
+WARNING:Xst:1710 - FF/Latch <idata_0> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Main> ...
+
+Optimizing unit <nvsram> ...
+
+Optimizing unit <FSMD> ...
+WARNING:Xst:1293 - FF/Latch <FSMD/WheelSize_5> has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <FSMD/WheelSize_4> has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <FSMD/WheelSize_2> has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <FSMD/WheelSize_1> has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <FSMD/WheelSize_0> has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <FSMD/mode_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <FSMD/mode_0> of sequential type is unconnected in block <Main>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <FSMD/WheelSize_7> in Unit <Main> is equivalent to the following 2 FFs/Latches, which will be removed : <FSMD/WheelSize_6> <FSMD/WheelSize_3> 
+Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 22.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 100
+ Flip-Flops                                            : 100
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Main.ngr
+Top Level Output File Name         : Main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 37
+
+Cell Usage :
+# BELS                             : 559
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 48
+#      LUT2                        : 69
+#      LUT2_D                      : 2
+#      LUT3                        : 54
+#      LUT3_D                      : 3
+#      LUT3_L                      : 1
+#      LUT4                        : 89
+#      LUT4_D                      : 2
+#      LUT4_L                      : 44
+#      MULT_AND                    : 1
+#      MUXCY                       : 109
+#      MUXF5                       : 3
+#      VCC                         : 1
+#      XORCY                       : 127
+# FlipFlops/Latches                : 100
+#      FDC                         : 92
+#      FDE                         : 5
+#      FDR                         : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 36
+#      IBUF                        : 4
+#      OBUF                        : 32
+# MULTs                            : 4
+#      MULT18X18                   : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : xa3s50vqg100-4 
+
+ Number of Slices:                      169  out of    768    22%  
+ Number of Slice Flip Flops:            100  out of   1536     6%  
+ Number of 4 input LUTs:                317  out of   1536    20%  
+ Number of IOs:                          37
+ Number of bonded IOBs:                  37  out of     63    58%  
+ Number of MULT18X18s:                    4  out of      4   100%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 100   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | IBUF                   | 92    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 23.417ns (Maximum Frequency: 42.704MHz)
+   Minimum input arrival time before clock: 23.672ns
+   Maximum output required time after clock: 7.241ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 23.417ns (frequency: 42.704MHz)
+  Total number of paths / destination ports: 2924631 / 104
+-------------------------------------------------------------------------
+Delay:               23.417ns (Levels of Logic = 44)
+  Source:            FSMD/Rotations_0 (FF)
+  Destination:       FSMD/Distance_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: FSMD/Rotations_0 to FSMD/Distance_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              9   0.720   1.319  FSMD/Rotations_0 (FSMD/Rotations_0)
+     LUT3:I1->O            5   0.551   1.116  FSMD/Rotations_mux0000<0>1 (FSMD/Rotations_mux0000<0>)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd3_lut<3> (FSMD/Mmult_Speed_mult0002_Madd3_lut<3>)
+     MUXCY:S->O            0   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd3_cy<3> (FSMD/Mmult_Speed_mult0002_Madd3_cy<3>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_Speed_mult0002_Madd3_xor<4> (FSMD/Mmult_Speed_mult0002_Madd_43)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd4_lut<4> (FSMD/Mmult_Speed_mult0002_Madd4_lut<4>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<4> (FSMD/Mmult_Speed_mult0002_Madd4_cy<4>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<5> (FSMD/Mmult_Speed_mult0002_Madd4_cy<5>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<6> (FSMD/Mmult_Speed_mult0002_Madd4_cy<6>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<7> (FSMD/Mmult_Speed_mult0002_Madd4_cy<7>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<8> (FSMD/Mmult_Speed_mult0002_Madd4_cy<8>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<9> (FSMD/Mmult_Speed_mult0002_Madd4_cy<9>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<10> (FSMD/Mmult_Speed_mult0002_Madd4_cy<10>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_Speed_mult0002_Madd4_xor<11> (FSMD/Mmult_Speed_mult0002_Madd_114)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd6_lut<11> (FSMD/Mmult_Speed_mult0002_Madd6_lut<11>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<11> (FSMD/Mmult_Speed_mult0002_Madd6_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<12> (FSMD/Mmult_Speed_mult0002_Madd6_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<13> (FSMD/Mmult_Speed_mult0002_Madd6_cy<13>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<14> (FSMD/Mmult_Speed_mult0002_Madd6_cy<14>)
+     XORCY:CI->O           2   0.904   0.877  FSMD/Mmult_Speed_mult0002_Madd6_xor<15> (FSMD/Speed_mult0002<15>)
+     MULT18X18:A15->P22   10   4.214   1.329  FSMD/Mmult_Distance_mult0000 (FSMD/Distance_mult0000<22>)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Madd_Distance_addsub0000_lut<10> (FSMD/Madd_Distance_addsub0000_lut<10>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Madd_Distance_addsub0000_cy<10> (FSMD/Madd_Distance_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<11> (FSMD/Madd_Distance_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<12> (FSMD/Madd_Distance_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<13> (FSMD/Madd_Distance_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<14> (FSMD/Madd_Distance_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<15> (FSMD/Madd_Distance_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<16> (FSMD/Madd_Distance_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<17> (FSMD/Madd_Distance_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<18> (FSMD/Madd_Distance_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<19> (FSMD/Madd_Distance_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<20> (FSMD/Madd_Distance_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<21> (FSMD/Madd_Distance_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<22> (FSMD/Madd_Distance_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<23> (FSMD/Madd_Distance_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<24> (FSMD/Madd_Distance_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<25> (FSMD/Madd_Distance_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<26> (FSMD/Madd_Distance_addsub0000_cy<26>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<27> (FSMD/Madd_Distance_addsub0000_cy<27>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<28> (FSMD/Madd_Distance_addsub0000_cy<28>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<29> (FSMD/Madd_Distance_addsub0000_cy<29>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<30> (FSMD/Madd_Distance_addsub0000_cy<30>)
+     XORCY:CI->O           1   0.904   0.869  FSMD/Madd_Distance_addsub0000_xor<31> (FSMD/Distance_addsub0000<31>)
+     LUT3:I2->O            1   0.551   0.000  FSMD/Distance_mux0000<31> (FSMD/Distance_mux0000<31>)
+     FDC:D                     0.203          FSMD/Distance_31
+    ----------------------------------------
+    Total                     23.417ns (15.915ns logic, 7.502ns route)
+                                       (68.0% logic, 32.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 592135 / 98
+-------------------------------------------------------------------------
+Offset:              23.672ns (Levels of Logic = 45)
+  Source:            rotSignal (PAD)
+  Destination:       FSMD/Distance_31 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rotSignal to FSMD/Distance_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            10   0.821   1.473  rotSignal_IBUF (rotSignal_IBUF)
+     LUT3:I0->O            5   0.551   1.116  FSMD/Rotations_mux0000<0>1 (FSMD/Rotations_mux0000<0>)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd3_lut<3> (FSMD/Mmult_Speed_mult0002_Madd3_lut<3>)
+     MUXCY:S->O            0   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd3_cy<3> (FSMD/Mmult_Speed_mult0002_Madd3_cy<3>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_Speed_mult0002_Madd3_xor<4> (FSMD/Mmult_Speed_mult0002_Madd_43)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd4_lut<4> (FSMD/Mmult_Speed_mult0002_Madd4_lut<4>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<4> (FSMD/Mmult_Speed_mult0002_Madd4_cy<4>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<5> (FSMD/Mmult_Speed_mult0002_Madd4_cy<5>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<6> (FSMD/Mmult_Speed_mult0002_Madd4_cy<6>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<7> (FSMD/Mmult_Speed_mult0002_Madd4_cy<7>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<8> (FSMD/Mmult_Speed_mult0002_Madd4_cy<8>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<9> (FSMD/Mmult_Speed_mult0002_Madd4_cy<9>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<10> (FSMD/Mmult_Speed_mult0002_Madd4_cy<10>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_Speed_mult0002_Madd4_xor<11> (FSMD/Mmult_Speed_mult0002_Madd_114)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd6_lut<11> (FSMD/Mmult_Speed_mult0002_Madd6_lut<11>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<11> (FSMD/Mmult_Speed_mult0002_Madd6_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<12> (FSMD/Mmult_Speed_mult0002_Madd6_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<13> (FSMD/Mmult_Speed_mult0002_Madd6_cy<13>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<14> (FSMD/Mmult_Speed_mult0002_Madd6_cy<14>)
+     XORCY:CI->O           2   0.904   0.877  FSMD/Mmult_Speed_mult0002_Madd6_xor<15> (FSMD/Speed_mult0002<15>)
+     MULT18X18:A15->P22   10   4.214   1.329  FSMD/Mmult_Distance_mult0000 (FSMD/Distance_mult0000<22>)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Madd_Distance_addsub0000_lut<10> (FSMD/Madd_Distance_addsub0000_lut<10>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Madd_Distance_addsub0000_cy<10> (FSMD/Madd_Distance_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<11> (FSMD/Madd_Distance_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<12> (FSMD/Madd_Distance_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<13> (FSMD/Madd_Distance_addsub0000_cy<13>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<14> (FSMD/Madd_Distance_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<15> (FSMD/Madd_Distance_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<16> (FSMD/Madd_Distance_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<17> (FSMD/Madd_Distance_addsub0000_cy<17>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<18> (FSMD/Madd_Distance_addsub0000_cy<18>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<19> (FSMD/Madd_Distance_addsub0000_cy<19>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<20> (FSMD/Madd_Distance_addsub0000_cy<20>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<21> (FSMD/Madd_Distance_addsub0000_cy<21>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<22> (FSMD/Madd_Distance_addsub0000_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<23> (FSMD/Madd_Distance_addsub0000_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<24> (FSMD/Madd_Distance_addsub0000_cy<24>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<25> (FSMD/Madd_Distance_addsub0000_cy<25>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<26> (FSMD/Madd_Distance_addsub0000_cy<26>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<27> (FSMD/Madd_Distance_addsub0000_cy<27>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<28> (FSMD/Madd_Distance_addsub0000_cy<28>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<29> (FSMD/Madd_Distance_addsub0000_cy<29>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<30> (FSMD/Madd_Distance_addsub0000_cy<30>)
+     XORCY:CI->O           1   0.904   0.869  FSMD/Madd_Distance_addsub0000_xor<31> (FSMD/Distance_addsub0000<31>)
+     LUT3:I2->O            1   0.551   0.000  FSMD/Distance_mux0000<31> (FSMD/Distance_mux0000<31>)
+     FDC:D                     0.203          FSMD/Distance_31
+    ----------------------------------------
+    Total                     23.672ns (16.016ns logic, 7.656ns route)
+                                       (67.7% logic, 32.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              7.241ns (Levels of Logic = 1)
+  Source:            FSMD/value_31 (FF)
+  Destination:       value<31> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: FSMD/value_31 to value<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.720   0.877  FSMD/value_31 (FSMD/value_31)
+     OBUF:I->O                 5.644          value_31_OBUF (value<31>)
+    ----------------------------------------
+    Total                      7.241ns (6.364ns logic, 0.877ns route)
+                                       (87.9% logic, 12.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.84 secs
+ 
+--> 
+
+Total memory usage is 153044 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   28 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
+

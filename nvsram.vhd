@@ -9,21 +9,20 @@ entity nvsram is
 	-- (set timing constraints in "User Constraints"->"Create Timing Constraints")
 	port(
 		A		: OUT    std_logic_vector(10 downto 0);	--nvsram module port, address
-		DQ 	: INOUT  std_logic_vector(7 downto 0); 	--nvsram module port, data
+		DQ 	: IN  std_logic_vector(7 downto 0); 	--nvsram module port, data
 		CE 	: OUT    std_logic;								--nvsram module port, chip enable
 		OE 	: OUT    std_logic;								--nvsram module port, output enable
 		WE 	: OUT    std_logic;								--nvsram module port, write enable
 		clk 	: IN     std_logic;
 		rst 	: IN     std_logic;
-		idata	: INOUT  std_logic_vector(7 downto 0);	-- data - user key we want to store/load
-		ice	: IN		std_logic;								-- chip enable
-		irw	: IN		std_logic;								-- read or write op?
+		idata	: OUT  std_logic_vector(7 downto 0);	-- data - user key we want to store/load
+		ice	: IN		std_logic;								-- chip enable	
 		ordy	: OUT		std_logic								-- ready for next op?
 	  );
 end nvsram;
 
 architecture Behavioral of nvsram is
-	type state_type IS (IDLE,LOAD0,LOAD1,STORE0);
+	type state_type IS (IDLE,LOAD0,LOAD1);
 	signal current_state: state_type;
 begin
 	A(10 downto 2)<=(others=>'0');
@@ -37,20 +36,12 @@ begin
 					when IDLE=>
 						if(ice='1') then
 							ordy<='0';
+							CE<='1';						
+							A(1 downto 0)<="00";
 							CE<='1';
-							if(irw='0') then
-								A(1 downto 0)<="00";
-								CE<='1';
-								OE<='1';
-								WE<='0';
-								current_state <= LOAD0;
-							else
-								A(1 downto 0)<="00";
-								OE<='0';
-								WE<='1';
-								DQ<=idata(7 downto 0);
-								current_state <= IDLE;
-							end if;
+							OE<='1';
+							WE<='0';
+							current_state <= LOAD0;							
 						else
 							ordy<='1';
 							CE<='0';
@@ -58,10 +49,11 @@ begin
 							WE<='0';
 							current_state <= IDLE;
 						end if;
-					when LOAD0=>
-						idata(7 downto 0)<=DQ;
-						A(1 downto 0)<="00";
-						current_state <= IDLE;					
+					when LOAD0=>						
+						current_state <= LOAD1;
+					when LOAD1=>
+						idata(7 downto 0)<=DQ;						
+						current_state <= IDLE;
 					when others=>
 						current_state <= IDLE;
 				end case;
