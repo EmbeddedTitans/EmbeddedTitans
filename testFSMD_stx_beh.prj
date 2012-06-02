@@ -1,0 +1,5 @@
+vhdl isim_temp "nvsramSim.vhd"
+vhdl isim_temp "nvsram.vhd"
+vhdl isim_temp "FSMD.vhd"
+vhdl isim_temp "Main.vhd"
+vhdl isim_temp "testFSMD.vhd"

@@ -1,29 +1,5 @@
 --------------------------------------------------------------------------------
--- Company: 
--- Engineer:
---
--- Create Date:   15:10:43 05/20/2012
--- Design Name:   
--- Module Name:   C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD.vhd
--- Project Name:  EmbeddedTitans
--- Target Device:  
--- Tool versions:  
--- Description:   
--- 
--- VHDL Test Bench Created by ISE for module: FSMD
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
+-- test prze³¹czania stanów
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -141,6 +117,14 @@ BEGIN
 		modeSpeed <= '0';
 		modeDist <= '1';
 		wait for clk_period*20000;
+		rst <= '1';
+		wait for clk_period*5;
+		rst <= '0';
+		wait for clk_period*30000;
+		modeSpeed <= '0';
+		modeDist <= '0';
+		wait for clk_period*10000;
+		modeSpeed <= '1';		
       wait;
    end process;
 

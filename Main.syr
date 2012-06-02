@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: Main.prj
 
@@ -201,7 +201,7 @@ WARNING:Xst:647 - Input <LCDready> is never used. This port will be preserved an
     | States             | 5                                              |
     | Transitions        | 13                                             |
     | Inputs             | 4                                              |
-    | Outputs            | 6                                              |
+    | Outputs            | 7                                              |
     | Clock              | clk                       (rising_edge)        |
     | Reset              | rst                       (positive)           |
     | Reset type         | asynchronous                                   |
@@ -214,26 +214,27 @@ WARNING:Xst:647 - Input <LCDready> is never used. This port will be preserved an
     Found 2-bit register for signal <mode>.
     Found 1-bit register for signal <NVRAMenable>.
     Found 16-bit register for signal <Counter>.
-    Found 16-bit adder for signal <Counter$add0000> created at line 104.
-    Found 16-bit comparator greatequal for signal <Counter$cmp_ge0000> created at line 96.
+    Found 16-bit adder for signal <Counter$add0000> created at line 108.
+    Found 16-bit comparator greatequal for signal <Counter$cmp_ge0000> created at line 102.
     Found 32-bit register for signal <Distance>.
-    Found 32-bit adder for signal <Distance$add0000> created at line 124.
-    Found 32-bit adder for signal <Distance$addsub0000> created at line 99.
-    Found 16x16-bit multiplier for signal <Distance$mult0000> created at line 99.
-    Found 16x16-bit multiplier for signal <Distance$mult0001> created at line 124.
-    Found 8x8-bit multiplier for signal <Distance$mult0002> created at line 124.
+    Found 32-bit adder for signal <Distance$addsub0000> created at line 104.
     Found 1-bit register for signal <oldRotSignal>.
     Found 8-bit register for signal <Rotations>.
-    Found 8-bit adder for signal <Rotations$add0000> created at line 116.
-    Found 16x16-bit multiplier for signal <Speed$mult0000> created at line 98.
-    Found 8x8-bit multiplier for signal <Speed$mult0002> created at line 98.
+    Found 8-bit adder for signal <Rotations$add0000> created at line 123.
+    Found 32-bit register for signal <Speed>.
+    Found 16-bit comparator less for signal <Speed$cmp_lt0000> created at line 102.
+    Found 16x16-bit multiplier for signal <Speed$mult0000> created at line 103.
+    Found 8x8-bit multiplier for signal <Speed$mult0001> created at line 103.
+    Found 32-bit adder for signal <tempDist$add0001> created at line 130.
+    Found 32x32-bit multiplier for signal <tempDist$mult0000> created at line 133.
+    Found 8x8-bit multiplier for signal <tempDist$mult0001> created at line 130.
     Found 8-bit register for signal <WheelSize>.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred 100 D-type flip-flop(s).
+	inferred 132 D-type flip-flop(s).
 	inferred   4 Adder/Subtractor(s).
-	inferred   5 Multiplier(s).
-	inferred   1 Comparator(s).
+	inferred   4 Multiplier(s).
+	inferred   2 Comparator(s).
 Unit <FSMD> synthesized.
 
 
@@ -249,21 +250,23 @@ Unit <Main> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Multipliers                                          : 5
- 16x16-bit multiplier                                  : 3
+# Multipliers                                          : 4
+ 16x16-bit multiplier                                  : 1
+ 32x32-bit multiplier                                  : 1
  8x8-bit multiplier                                    : 2
 # Adders/Subtractors                                   : 4
  16-bit adder                                          : 1
  32-bit adder                                          : 2
  8-bit adder                                           : 1
-# Registers                                            : 12
+# Registers                                            : 13
  1-bit register                                        : 4
  16-bit register                                       : 1
  2-bit register                                        : 1
- 32-bit register                                       : 2
+ 32-bit register                                       : 3
  8-bit register                                        : 4
-# Comparators                                          : 1
+# Comparators                                          : 2
  16-bit comparator greatequal                          : 1
+ 16-bit comparator less                                : 1
 
 =========================================================================
 
@@ -293,6 +296,7 @@ Optimizing FSM <nvsram/current_state/FSM> on signal <current_state[1:2]> with us
 -------------------
 INFO:Xst:2261 - The FF/Latch <DQ_3> in Unit <nvsramSim> is equivalent to the following 2 FFs/Latches, which will be removed : <DQ_6> <DQ_7> 
 INFO:Xst:2261 - The FF/Latch <DQ_0> in Unit <nvsramSim> is equivalent to the following 4 FFs/Latches, which will be removed : <DQ_1> <DQ_2> <DQ_4> <DQ_5> 
+INFO:Xst:2261 - The FF/Latch <Speed_24> in Unit <FSMD> is equivalent to the following 7 FFs/Latches, which will be removed : <Speed_25> <Speed_26> <Speed_27> <Speed_28> <Speed_29> <Speed_30> <Speed_31> 
 WARNING:Xst:1710 - FF/Latch <DQ_0> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <idata_0> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <idata_1> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
@@ -304,23 +308,26 @@ WARNING:Xst:1293 - FF/Latch <WheelSize_1> has a constant value of 0 in block <FS
 WARNING:Xst:1293 - FF/Latch <WheelSize_2> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <WheelSize_4> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <WheelSize_5> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <Speed_24> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
 # FSMs                                                 : 2
-# Multipliers                                          : 5
- 16x16-bit multiplier                                  : 3
+# Multipliers                                          : 4
+ 16x16-bit multiplier                                  : 1
+ 32x32-bit multiplier                                  : 1
  8x8-bit multiplier                                    : 2
 # Adders/Subtractors                                   : 4
  16-bit adder                                          : 1
  32-bit adder                                          : 2
  8-bit adder                                           : 1
-# Registers                                            : 118
- Flip-Flops                                            : 118
-# Comparators                                          : 1
+# Registers                                            : 150
+ Flip-Flops                                            : 150
+# Comparators                                          : 2
  16-bit comparator greatequal                          : 1
+ 16-bit comparator less                                : 1
 
 =========================================================================
 
@@ -332,10 +339,35 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_1> (without init
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_2> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_4> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_5> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <Speed_24> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_25> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_26> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_27> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_28> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_29> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_30> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_31> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <DQ_3> in Unit <nvsramSim> is equivalent to the following 2 FFs/Latches, which will be removed : <DQ_6> <DQ_7> 
 INFO:Xst:2261 - The FF/Latch <idata_3> in Unit <nvsram> is equivalent to the following 2 FFs/Latches, which will be removed : <idata_6> <idata_7> 
 INFO:Xst:2261 - The FF/Latch <idata_0> in Unit <nvsram> is equivalent to the following 4 FFs/Latches, which will be removed : <idata_1> <idata_2> <idata_4> <idata_5> 
 WARNING:Xst:1710 - FF/Latch <idata_0> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <Speed_23> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_22> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_21> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_20> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_19> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_18> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_17> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_16> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_15> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_14> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_13> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_12> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_31> (without init value) has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_30> (without init value) has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_29> (without init value) has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_28> (without init value) has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_27> (without init value) has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <Main> ...
 
@@ -353,7 +385,7 @@ WARNING:Xst:2677 - Node <FSMD/mode_0> of sequential type is unconnected in block
 Mapping all equations...
 Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <FSMD/WheelSize_7> in Unit <Main> is equivalent to the following 2 FFs/Latches, which will be removed : <FSMD/WheelSize_6> <FSMD/WheelSize_3> 
-Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 22.
+Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 28.
 
 Final Macro Processing ...
 
@@ -361,8 +393,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 100
- Flip-Flops                                            : 100
+# Registers                                            : 107
+ Flip-Flops                                            : 107
 
 =========================================================================
 
@@ -391,25 +423,25 @@ Design Statistics
 # IOs                              : 37
 
 Cell Usage :
-# BELS                             : 559
+# BELS                             : 756
 #      GND                         : 1
 #      INV                         : 5
-#      LUT1                        : 48
-#      LUT2                        : 69
-#      LUT2_D                      : 2
-#      LUT3                        : 54
-#      LUT3_D                      : 3
-#      LUT3_L                      : 1
-#      LUT4                        : 89
-#      LUT4_D                      : 2
-#      LUT4_L                      : 44
-#      MULT_AND                    : 1
-#      MUXCY                       : 109
-#      MUXF5                       : 3
+#      LUT1                        : 81
+#      LUT2                        : 82
+#      LUT2_D                      : 1
+#      LUT3                        : 61
+#      LUT3_D                      : 4
+#      LUT4                        : 118
+#      LUT4_D                      : 6
+#      LUT4_L                      : 27
+#      MULT_AND                    : 2
+#      MUXCY                       : 157
+#      MUXF5                       : 16
 #      VCC                         : 1
-#      XORCY                       : 127
-# FlipFlops/Latches                : 100
-#      FDC                         : 92
+#      XORCY                       : 194
+# FlipFlops/Latches                : 107
+#      FDC                         : 87
+#      FDCE                        : 12
 #      FDE                         : 5
 #      FDR                         : 3
 # Clock Buffers                    : 1
@@ -417,8 +449,8 @@ Cell Usage :
 # IO Buffers                       : 36
 #      IBUF                        : 4
 #      OBUF                        : 32
-# MULTs                            : 4
-#      MULT18X18                   : 4
+# MULTs                            : 2
+#      MULT18X18                   : 2
 =========================================================================
 
 Device utilization summary:
@@ -426,12 +458,12 @@ Device utilization summary:
 
 Selected Device : xa3s50vqg100-4 
 
- Number of Slices:                      169  out of    768    22%  
- Number of Slice Flip Flops:            100  out of   1536     6%  
- Number of 4 input LUTs:                317  out of   1536    20%  
+ Number of Slices:                      211  out of    768    27%  
+ Number of Slice Flip Flops:            107  out of   1536     6%  
+ Number of 4 input LUTs:                385  out of   1536    25%  
  Number of IOs:                          37
  Number of bonded IOBs:                  37  out of     63    58%  
- Number of MULT18X18s:                    4  out of      4   100%  
+ Number of MULT18X18s:                    2  out of      4    50%  
  Number of GCLKs:                         1  out of      8    12%  
 
 ---------------------------
@@ -455,7 +487,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 100   |
+clk                                | BUFGP                  | 107   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -463,16 +495,16 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-rst                                | IBUF                   | 92    |
+rst                                | IBUF                   | 99    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 23.417ns (Maximum Frequency: 42.704MHz)
-   Minimum input arrival time before clock: 23.672ns
-   Maximum output required time after clock: 7.241ns
+   Minimum period: 25.748ns (Maximum Frequency: 38.838MHz)
+   Minimum input arrival time before clock: 26.019ns
+   Maximum output required time after clock: 7.271ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -481,162 +513,156 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 23.417ns (frequency: 42.704MHz)
-  Total number of paths / destination ports: 2924631 / 104
+  Clock period: 25.748ns (frequency: 38.838MHz)
+  Total number of paths / destination ports: 9508784 / 123
 -------------------------------------------------------------------------
-Delay:               23.417ns (Levels of Logic = 44)
-  Source:            FSMD/Rotations_0 (FF)
-  Destination:       FSMD/Distance_31 (FF)
+Delay:               25.748ns (Levels of Logic = 41)
+  Source:            FSMD/oldRotSignal (FF)
+  Destination:       FSMD/value_25 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: FSMD/Rotations_0 to FSMD/Distance_31
+  Data Path: FSMD/oldRotSignal to FSMD/value_25
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              9   0.720   1.319  FSMD/Rotations_0 (FSMD/Rotations_0)
-     LUT3:I1->O            5   0.551   1.116  FSMD/Rotations_mux0000<0>1 (FSMD/Rotations_mux0000<0>)
-     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd3_lut<3> (FSMD/Mmult_Speed_mult0002_Madd3_lut<3>)
-     MUXCY:S->O            0   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd3_cy<3> (FSMD/Mmult_Speed_mult0002_Madd3_cy<3>)
-     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_Speed_mult0002_Madd3_xor<4> (FSMD/Mmult_Speed_mult0002_Madd_43)
-     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd4_lut<4> (FSMD/Mmult_Speed_mult0002_Madd4_lut<4>)
-     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<4> (FSMD/Mmult_Speed_mult0002_Madd4_cy<4>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<5> (FSMD/Mmult_Speed_mult0002_Madd4_cy<5>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<6> (FSMD/Mmult_Speed_mult0002_Madd4_cy<6>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<7> (FSMD/Mmult_Speed_mult0002_Madd4_cy<7>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<8> (FSMD/Mmult_Speed_mult0002_Madd4_cy<8>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<9> (FSMD/Mmult_Speed_mult0002_Madd4_cy<9>)
-     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<10> (FSMD/Mmult_Speed_mult0002_Madd4_cy<10>)
-     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_Speed_mult0002_Madd4_xor<11> (FSMD/Mmult_Speed_mult0002_Madd_114)
-     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd6_lut<11> (FSMD/Mmult_Speed_mult0002_Madd6_lut<11>)
-     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<11> (FSMD/Mmult_Speed_mult0002_Madd6_cy<11>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<12> (FSMD/Mmult_Speed_mult0002_Madd6_cy<12>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<13> (FSMD/Mmult_Speed_mult0002_Madd6_cy<13>)
-     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<14> (FSMD/Mmult_Speed_mult0002_Madd6_cy<14>)
-     XORCY:CI->O           2   0.904   0.877  FSMD/Mmult_Speed_mult0002_Madd6_xor<15> (FSMD/Speed_mult0002<15>)
-     MULT18X18:A15->P22   10   4.214   1.329  FSMD/Mmult_Distance_mult0000 (FSMD/Distance_mult0000<22>)
-     LUT2:I1->O            1   0.551   0.000  FSMD/Madd_Distance_addsub0000_lut<10> (FSMD/Madd_Distance_addsub0000_lut<10>)
-     MUXCY:S->O            1   0.500   0.000  FSMD/Madd_Distance_addsub0000_cy<10> (FSMD/Madd_Distance_addsub0000_cy<10>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<11> (FSMD/Madd_Distance_addsub0000_cy<11>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<12> (FSMD/Madd_Distance_addsub0000_cy<12>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<13> (FSMD/Madd_Distance_addsub0000_cy<13>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<14> (FSMD/Madd_Distance_addsub0000_cy<14>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<15> (FSMD/Madd_Distance_addsub0000_cy<15>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<16> (FSMD/Madd_Distance_addsub0000_cy<16>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<17> (FSMD/Madd_Distance_addsub0000_cy<17>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<18> (FSMD/Madd_Distance_addsub0000_cy<18>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<19> (FSMD/Madd_Distance_addsub0000_cy<19>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<20> (FSMD/Madd_Distance_addsub0000_cy<20>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<21> (FSMD/Madd_Distance_addsub0000_cy<21>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<22> (FSMD/Madd_Distance_addsub0000_cy<22>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<23> (FSMD/Madd_Distance_addsub0000_cy<23>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<24> (FSMD/Madd_Distance_addsub0000_cy<24>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<25> (FSMD/Madd_Distance_addsub0000_cy<25>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<26> (FSMD/Madd_Distance_addsub0000_cy<26>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<27> (FSMD/Madd_Distance_addsub0000_cy<27>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<28> (FSMD/Madd_Distance_addsub0000_cy<28>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<29> (FSMD/Madd_Distance_addsub0000_cy<29>)
-     MUXCY:CI->O           0   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<30> (FSMD/Madd_Distance_addsub0000_cy<30>)
-     XORCY:CI->O           1   0.904   0.869  FSMD/Madd_Distance_addsub0000_xor<31> (FSMD/Distance_addsub0000<31>)
-     LUT3:I2->O            1   0.551   0.000  FSMD/Distance_mux0000<31> (FSMD/Distance_mux0000<31>)
-     FDC:D                     0.203          FSMD/Distance_31
+     FDC:C->Q             12   0.720   1.313  FSMD/oldRotSignal (FSMD/oldRotSignal)
+     LUT3:I1->O            7   0.551   1.261  FSMD/Rotations_mux0000<0>1 (FSMD/Rotations_mux0000<0>)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_tempDist_mult0001_Madd3_lut<3> (FSMD/Mmult_tempDist_mult0001_Madd3_lut<3>)
+     MUXCY:S->O            0   0.500   0.000  FSMD/Mmult_tempDist_mult0001_Madd3_cy<3> (FSMD/Mmult_tempDist_mult0001_Madd3_cy<3>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_tempDist_mult0001_Madd3_xor<4> (FSMD/Mmult_tempDist_mult0001_Madd_43)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_lut<4> (FSMD/Mmult_tempDist_mult0001_Madd4_lut<4>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<4> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<4>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<5> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<5>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<6> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<6>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<7> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<7>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<8> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<8>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<9> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<9>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<10> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<10>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_tempDist_mult0001_Madd4_xor<11> (FSMD/Mmult_tempDist_mult0001_Madd_114)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_lut<11> (FSMD/Mmult_tempDist_mult0001_Madd6_lut<11>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_cy<11> (FSMD/Mmult_tempDist_mult0001_Madd6_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_cy<12> (FSMD/Mmult_tempDist_mult0001_Madd6_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_cy<13> (FSMD/Mmult_tempDist_mult0001_Madd6_cy<13>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_cy<14> (FSMD/Mmult_tempDist_mult0001_Madd6_cy<14>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_tempDist_mult0001_Madd6_xor<15> (FSMD/tempDist_mult0001<15>)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Madd_tempDist_add0001_lut<15> (FSMD/Madd_tempDist_add0001_lut<15>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Madd_tempDist_add0001_cy<15> (FSMD/Madd_tempDist_add0001_cy<15>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<16> (FSMD/Madd_tempDist_add0001_cy<16>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<17> (FSMD/Madd_tempDist_add0001_cy<17>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<18> (FSMD/Madd_tempDist_add0001_cy<18>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<19> (FSMD/Madd_tempDist_add0001_cy<19>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<20> (FSMD/Madd_tempDist_add0001_cy<20>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<21> (FSMD/Madd_tempDist_add0001_cy<21>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<22> (FSMD/Madd_tempDist_add0001_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<23> (FSMD/Madd_tempDist_add0001_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<24> (FSMD/Madd_tempDist_add0001_cy<24>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<25> (FSMD/Madd_tempDist_add0001_cy<25>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<26> (FSMD/Madd_tempDist_add0001_cy<26>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<27> (FSMD/Madd_tempDist_add0001_cy<27>)
+     XORCY:CI->O           2   0.904   0.877  FSMD/Madd_tempDist_add0001_xor<28> (FSMD/tempDist_add0001<28>)
+     MULT18X18:A16->P22    1   4.214   0.996  FSMD/Mmult_tempDist_mult0000_submult_0 (FSMD/Mmult_tempDist_mult0000_submult_0_22)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_tempDist_mult0000_Madd_lut<22> (FSMD/Mmult_tempDist_mult0000_Madd_lut<22>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_tempDist_mult0000_Madd_cy<22> (FSMD/Mmult_tempDist_mult0000_Madd_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0000_Madd_cy<23> (FSMD/Mmult_tempDist_mult0000_Madd_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0000_Madd_cy<24> (FSMD/Mmult_tempDist_mult0000_Madd_cy<24>)
+     XORCY:CI->O           1   0.904   0.827  FSMD/Mmult_tempDist_mult0000_Madd_xor<25> (FSMD/tempDist_mult0000<25>)
+     LUT4:I3->O            1   0.551   0.000  FSMD/value_mux0000<6>1 (FSMD/value_mux0000<6>)
+     FDC:D                     0.203          FSMD/value_25
     ----------------------------------------
-    Total                     23.417ns (15.915ns logic, 7.502ns route)
-                                       (68.0% logic, 32.0% route)
+    Total                     25.748ns (17.486ns logic, 8.262ns route)
+                                       (67.9% logic, 32.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 592135 / 98
+  Total number of paths / destination ports: 1942744 / 117
 -------------------------------------------------------------------------
-Offset:              23.672ns (Levels of Logic = 45)
+Offset:              26.019ns (Levels of Logic = 42)
   Source:            rotSignal (PAD)
-  Destination:       FSMD/Distance_31 (FF)
+  Destination:       FSMD/value_25 (FF)
   Destination Clock: clk rising
 
-  Data Path: rotSignal to FSMD/Distance_31
+  Data Path: rotSignal to FSMD/value_25
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            10   0.821   1.473  rotSignal_IBUF (rotSignal_IBUF)
-     LUT3:I0->O            5   0.551   1.116  FSMD/Rotations_mux0000<0>1 (FSMD/Rotations_mux0000<0>)
-     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd3_lut<3> (FSMD/Mmult_Speed_mult0002_Madd3_lut<3>)
-     MUXCY:S->O            0   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd3_cy<3> (FSMD/Mmult_Speed_mult0002_Madd3_cy<3>)
-     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_Speed_mult0002_Madd3_xor<4> (FSMD/Mmult_Speed_mult0002_Madd_43)
-     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd4_lut<4> (FSMD/Mmult_Speed_mult0002_Madd4_lut<4>)
-     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<4> (FSMD/Mmult_Speed_mult0002_Madd4_cy<4>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<5> (FSMD/Mmult_Speed_mult0002_Madd4_cy<5>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<6> (FSMD/Mmult_Speed_mult0002_Madd4_cy<6>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<7> (FSMD/Mmult_Speed_mult0002_Madd4_cy<7>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<8> (FSMD/Mmult_Speed_mult0002_Madd4_cy<8>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<9> (FSMD/Mmult_Speed_mult0002_Madd4_cy<9>)
-     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd4_cy<10> (FSMD/Mmult_Speed_mult0002_Madd4_cy<10>)
-     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_Speed_mult0002_Madd4_xor<11> (FSMD/Mmult_Speed_mult0002_Madd_114)
-     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_Speed_mult0002_Madd6_lut<11> (FSMD/Mmult_Speed_mult0002_Madd6_lut<11>)
-     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<11> (FSMD/Mmult_Speed_mult0002_Madd6_cy<11>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<12> (FSMD/Mmult_Speed_mult0002_Madd6_cy<12>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<13> (FSMD/Mmult_Speed_mult0002_Madd6_cy<13>)
-     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_Speed_mult0002_Madd6_cy<14> (FSMD/Mmult_Speed_mult0002_Madd6_cy<14>)
-     XORCY:CI->O           2   0.904   0.877  FSMD/Mmult_Speed_mult0002_Madd6_xor<15> (FSMD/Speed_mult0002<15>)
-     MULT18X18:A15->P22   10   4.214   1.329  FSMD/Mmult_Distance_mult0000 (FSMD/Distance_mult0000<22>)
-     LUT2:I1->O            1   0.551   0.000  FSMD/Madd_Distance_addsub0000_lut<10> (FSMD/Madd_Distance_addsub0000_lut<10>)
-     MUXCY:S->O            1   0.500   0.000  FSMD/Madd_Distance_addsub0000_cy<10> (FSMD/Madd_Distance_addsub0000_cy<10>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<11> (FSMD/Madd_Distance_addsub0000_cy<11>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<12> (FSMD/Madd_Distance_addsub0000_cy<12>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<13> (FSMD/Madd_Distance_addsub0000_cy<13>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<14> (FSMD/Madd_Distance_addsub0000_cy<14>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<15> (FSMD/Madd_Distance_addsub0000_cy<15>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<16> (FSMD/Madd_Distance_addsub0000_cy<16>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<17> (FSMD/Madd_Distance_addsub0000_cy<17>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<18> (FSMD/Madd_Distance_addsub0000_cy<18>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<19> (FSMD/Madd_Distance_addsub0000_cy<19>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<20> (FSMD/Madd_Distance_addsub0000_cy<20>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<21> (FSMD/Madd_Distance_addsub0000_cy<21>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<22> (FSMD/Madd_Distance_addsub0000_cy<22>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<23> (FSMD/Madd_Distance_addsub0000_cy<23>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<24> (FSMD/Madd_Distance_addsub0000_cy<24>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<25> (FSMD/Madd_Distance_addsub0000_cy<25>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<26> (FSMD/Madd_Distance_addsub0000_cy<26>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<27> (FSMD/Madd_Distance_addsub0000_cy<27>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<28> (FSMD/Madd_Distance_addsub0000_cy<28>)
-     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<29> (FSMD/Madd_Distance_addsub0000_cy<29>)
-     MUXCY:CI->O           0   0.064   0.000  FSMD/Madd_Distance_addsub0000_cy<30> (FSMD/Madd_Distance_addsub0000_cy<30>)
-     XORCY:CI->O           1   0.904   0.869  FSMD/Madd_Distance_addsub0000_xor<31> (FSMD/Distance_addsub0000<31>)
-     LUT3:I2->O            1   0.551   0.000  FSMD/Distance_mux0000<31> (FSMD/Distance_mux0000<31>)
-     FDC:D                     0.203          FSMD/Distance_31
+     IBUF:I->O            11   0.821   1.483  rotSignal_IBUF (rotSignal_IBUF)
+     LUT3:I0->O            7   0.551   1.261  FSMD/Rotations_mux0000<0>1 (FSMD/Rotations_mux0000<0>)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_tempDist_mult0001_Madd3_lut<3> (FSMD/Mmult_tempDist_mult0001_Madd3_lut<3>)
+     MUXCY:S->O            0   0.500   0.000  FSMD/Mmult_tempDist_mult0001_Madd3_cy<3> (FSMD/Mmult_tempDist_mult0001_Madd3_cy<3>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_tempDist_mult0001_Madd3_xor<4> (FSMD/Mmult_tempDist_mult0001_Madd_43)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_lut<4> (FSMD/Mmult_tempDist_mult0001_Madd4_lut<4>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<4> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<4>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<5> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<5>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<6> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<6>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<7> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<7>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<8> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<8>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<9> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<9>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd4_cy<10> (FSMD/Mmult_tempDist_mult0001_Madd4_cy<10>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_tempDist_mult0001_Madd4_xor<11> (FSMD/Mmult_tempDist_mult0001_Madd_114)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_lut<11> (FSMD/Mmult_tempDist_mult0001_Madd6_lut<11>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_cy<11> (FSMD/Mmult_tempDist_mult0001_Madd6_cy<11>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_cy<12> (FSMD/Mmult_tempDist_mult0001_Madd6_cy<12>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_cy<13> (FSMD/Mmult_tempDist_mult0001_Madd6_cy<13>)
+     MUXCY:CI->O           0   0.064   0.000  FSMD/Mmult_tempDist_mult0001_Madd6_cy<14> (FSMD/Mmult_tempDist_mult0001_Madd6_cy<14>)
+     XORCY:CI->O           1   0.904   0.996  FSMD/Mmult_tempDist_mult0001_Madd6_xor<15> (FSMD/tempDist_mult0001<15>)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Madd_tempDist_add0001_lut<15> (FSMD/Madd_tempDist_add0001_lut<15>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Madd_tempDist_add0001_cy<15> (FSMD/Madd_tempDist_add0001_cy<15>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<16> (FSMD/Madd_tempDist_add0001_cy<16>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<17> (FSMD/Madd_tempDist_add0001_cy<17>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<18> (FSMD/Madd_tempDist_add0001_cy<18>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<19> (FSMD/Madd_tempDist_add0001_cy<19>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<20> (FSMD/Madd_tempDist_add0001_cy<20>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<21> (FSMD/Madd_tempDist_add0001_cy<21>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<22> (FSMD/Madd_tempDist_add0001_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<23> (FSMD/Madd_tempDist_add0001_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<24> (FSMD/Madd_tempDist_add0001_cy<24>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<25> (FSMD/Madd_tempDist_add0001_cy<25>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<26> (FSMD/Madd_tempDist_add0001_cy<26>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Madd_tempDist_add0001_cy<27> (FSMD/Madd_tempDist_add0001_cy<27>)
+     XORCY:CI->O           2   0.904   0.877  FSMD/Madd_tempDist_add0001_xor<28> (FSMD/tempDist_add0001<28>)
+     MULT18X18:A16->P22    1   4.214   0.996  FSMD/Mmult_tempDist_mult0000_submult_0 (FSMD/Mmult_tempDist_mult0000_submult_0_22)
+     LUT2:I1->O            1   0.551   0.000  FSMD/Mmult_tempDist_mult0000_Madd_lut<22> (FSMD/Mmult_tempDist_mult0000_Madd_lut<22>)
+     MUXCY:S->O            1   0.500   0.000  FSMD/Mmult_tempDist_mult0000_Madd_cy<22> (FSMD/Mmult_tempDist_mult0000_Madd_cy<22>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0000_Madd_cy<23> (FSMD/Mmult_tempDist_mult0000_Madd_cy<23>)
+     MUXCY:CI->O           1   0.064   0.000  FSMD/Mmult_tempDist_mult0000_Madd_cy<24> (FSMD/Mmult_tempDist_mult0000_Madd_cy<24>)
+     XORCY:CI->O           1   0.904   0.827  FSMD/Mmult_tempDist_mult0000_Madd_xor<25> (FSMD/tempDist_mult0000<25>)
+     LUT4:I3->O            1   0.551   0.000  FSMD/value_mux0000<6>1 (FSMD/value_mux0000<6>)
+     FDC:D                     0.203          FSMD/value_25
     ----------------------------------------
-    Total                     23.672ns (16.016ns logic, 7.656ns route)
-                                       (67.7% logic, 32.3% route)
+    Total                     26.019ns (17.587ns logic, 8.432ns route)
+                                       (67.6% logic, 32.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 32 / 32
+  Total number of paths / destination ports: 27 / 27
 -------------------------------------------------------------------------
-Offset:              7.241ns (Levels of Logic = 1)
-  Source:            FSMD/value_31 (FF)
-  Destination:       value<31> (PAD)
+Offset:              7.271ns (Levels of Logic = 1)
+  Source:            FSMD/value_11 (FF)
+  Destination:       value<11> (PAD)
   Source Clock:      clk rising
 
-  Data Path: FSMD/value_31 to value<31>
+  Data Path: FSMD/value_11 to value<11>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.720   0.877  FSMD/value_31 (FSMD/value_31)
-     OBUF:I->O                 5.644          value_31_OBUF (value<31>)
+     FDC:C->Q              3   0.720   0.907  FSMD/value_11 (FSMD/value_11)
+     OBUF:I->O                 5.644          value_11_OBUF (value<11>)
     ----------------------------------------
-    Total                      7.241ns (6.364ns logic, 0.877ns route)
-                                       (87.9% logic, 12.1% route)
+    Total                      7.271ns (6.364ns logic, 0.907ns route)
+                                       (87.5% logic, 12.5% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 11.84 secs
+Total CPU time to Xst completion: 12.31 secs
  
 --> 
 
-Total memory usage is 153044 kilobytes
+Total memory usage is 154068 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   28 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of warnings :   54 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
 

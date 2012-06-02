@@ -44,10 +44,10 @@ Setup/Hold to clock clk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-modeDist    |    7.633(R)|    0.057(R)|clk_BUFGP         |   0.000|
-modeSpeed   |    6.820(R)|    0.258(R)|clk_BUFGP         |   0.000|
-rotSignal   |   22.256(R)|   -0.127(R)|clk_BUFGP         |   0.000|
-rst         |    4.520(R)|   -0.290(R)|clk_BUFGP         |   0.000|
+modeDist    |    7.356(R)|   -0.080(R)|clk_BUFGP         |   0.000|
+modeSpeed   |    6.703(R)|   -0.142(R)|clk_BUFGP         |   0.000|
+rotSignal   |   24.458(R)|   -0.283(R)|clk_BUFGP         |   0.000|
+rst         |    3.873(R)|   -0.714(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -55,38 +55,33 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-value<0>    |    9.095(R)|clk_BUFGP         |   0.000|
-value<1>    |    8.972(R)|clk_BUFGP         |   0.000|
-value<2>    |    9.258(R)|clk_BUFGP         |   0.000|
-value<3>    |    9.257(R)|clk_BUFGP         |   0.000|
-value<4>    |    9.534(R)|clk_BUFGP         |   0.000|
-value<5>    |    8.858(R)|clk_BUFGP         |   0.000|
-value<6>    |    9.095(R)|clk_BUFGP         |   0.000|
-value<7>    |    9.630(R)|clk_BUFGP         |   0.000|
-value<8>    |    9.647(R)|clk_BUFGP         |   0.000|
-value<9>    |    8.561(R)|clk_BUFGP         |   0.000|
-value<10>   |    8.541(R)|clk_BUFGP         |   0.000|
-value<11>   |    8.210(R)|clk_BUFGP         |   0.000|
-value<12>   |    9.326(R)|clk_BUFGP         |   0.000|
-value<13>   |    9.310(R)|clk_BUFGP         |   0.000|
-value<14>   |    8.835(R)|clk_BUFGP         |   0.000|
-value<15>   |    9.128(R)|clk_BUFGP         |   0.000|
-value<16>   |    8.924(R)|clk_BUFGP         |   0.000|
-value<17>   |    9.139(R)|clk_BUFGP         |   0.000|
-value<18>   |    9.361(R)|clk_BUFGP         |   0.000|
-value<19>   |    9.373(R)|clk_BUFGP         |   0.000|
-value<20>   |    9.580(R)|clk_BUFGP         |   0.000|
-value<21>   |    9.057(R)|clk_BUFGP         |   0.000|
-value<22>   |    8.778(R)|clk_BUFGP         |   0.000|
-value<23>   |    8.852(R)|clk_BUFGP         |   0.000|
-value<24>   |    9.262(R)|clk_BUFGP         |   0.000|
-value<25>   |    8.988(R)|clk_BUFGP         |   0.000|
-value<26>   |    9.456(R)|clk_BUFGP         |   0.000|
-value<27>   |    9.652(R)|clk_BUFGP         |   0.000|
-value<28>   |    9.308(R)|clk_BUFGP         |   0.000|
-value<29>   |    9.375(R)|clk_BUFGP         |   0.000|
-value<30>   |    9.660(R)|clk_BUFGP         |   0.000|
-value<31>   |    9.011(R)|clk_BUFGP         |   0.000|
+value<0>    |    9.030(R)|clk_BUFGP         |   0.000|
+value<1>    |    9.259(R)|clk_BUFGP         |   0.000|
+value<2>    |    9.784(R)|clk_BUFGP         |   0.000|
+value<3>    |    9.008(R)|clk_BUFGP         |   0.000|
+value<4>    |    9.227(R)|clk_BUFGP         |   0.000|
+value<5>    |    9.415(R)|clk_BUFGP         |   0.000|
+value<6>    |    9.122(R)|clk_BUFGP         |   0.000|
+value<7>    |    8.875(R)|clk_BUFGP         |   0.000|
+value<8>    |    9.572(R)|clk_BUFGP         |   0.000|
+value<9>    |    9.266(R)|clk_BUFGP         |   0.000|
+value<10>   |    8.953(R)|clk_BUFGP         |   0.000|
+value<11>   |    9.314(R)|clk_BUFGP         |   0.000|
+value<12>   |    9.236(R)|clk_BUFGP         |   0.000|
+value<13>   |    8.155(R)|clk_BUFGP         |   0.000|
+value<14>   |    8.918(R)|clk_BUFGP         |   0.000|
+value<15>   |    8.158(R)|clk_BUFGP         |   0.000|
+value<16>   |    8.823(R)|clk_BUFGP         |   0.000|
+value<17>   |    9.170(R)|clk_BUFGP         |   0.000|
+value<18>   |    9.408(R)|clk_BUFGP         |   0.000|
+value<19>   |    8.880(R)|clk_BUFGP         |   0.000|
+value<20>   |    9.186(R)|clk_BUFGP         |   0.000|
+value<21>   |    9.261(R)|clk_BUFGP         |   0.000|
+value<22>   |    8.906(R)|clk_BUFGP         |   0.000|
+value<23>   |    9.087(R)|clk_BUFGP         |   0.000|
+value<24>   |    9.130(R)|clk_BUFGP         |   0.000|
+value<25>   |    8.791(R)|clk_BUFGP         |   0.000|
+value<26>   |    8.506(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -94,18 +89,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   22.141|         |         |         |
+clk            |   24.714|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Fri Jun 01 13:02:25 2012 
+Analysis completed Sat Jun 02 13:10:20 2012 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 81 MB
+Peak Memory Usage: 82 MB
 
 
 

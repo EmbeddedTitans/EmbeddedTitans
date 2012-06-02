@@ -39,6 +39,7 @@ begin
 	 variable Rotations: unsigned(7 downto 0):= to_unsigned(0,8);
 	 variable Counter: unsigned(15 downto 0):= to_unsigned(0,16);
 	 variable Distance: unsigned(31 downto 0):= to_unsigned(0,32);
+	 variable tempDist: unsigned(63 downto 0);
 	 variable WheelSize: unsigned(7 downto 0):=to_unsigned(0,8);
 	 variable Speed: unsigned(31 downto 0):= to_unsigned(0,32);    
     begin
@@ -47,13 +48,14 @@ begin
 			oldRotSignal := '0';
 			Rotations := to_unsigned(0,8);
 			Counter := to_unsigned(0,16);
-			Distance := to_unsigned(0,32);
+			Distance := to_unsigned(0,32);			
 			Speed := to_unsigned(0,32);					
 			State := ST_INIT;																						
 		elsif (clk'event and clk='1') then
 			case State is				
 				when ST_INIT =>	-- starting
 					mode <= "00";
+					value <= to_unsigned(0,32);
 					if(NVRAMready='1') then
 						NVRAMenable <='1';										
 						State:=ST_LOAD;
@@ -72,6 +74,7 @@ begin
 					end if;
 				when ST_IDLE =>	-- idle state 
 					mode <= "01";											
+					value <= to_unsigned(0,32);
 					if(modeSpeed='1') then
 						State:=ST_SPEED;
 					elsif(modeDist='1') then
@@ -83,7 +86,10 @@ begin
 					-- sprawdŸ czy nie prze³¹czono na drugi tryb
 					if modeDist='1' and modeSpeed='0' then
 						mode <= "11";					
-						State := ST_DIST;
+						State := ST_DIST;	
+					elsif modeSpeed='0' and modeDist='0' then
+						mode<="01";
+						State := ST_IDLE;
 					else 						
 						-- wykrycie obrotu ko³a (ci¹g jedynek po ci¹gu zer)
 						if rotSignal='1' and oldRotSignal='0' then
@@ -93,23 +99,24 @@ begin
 							oldRotSignal:='0';
 						end if;
 						-- co sekundê oblicz prêdkoœæ i dystans i  i uaktualnij wyswietlacz
-						if (Counter >= 1000) then												
-							--Speed := Rotations*WheelSize*9/256; --obliczamy speed w km/h
-							Speed := Rotations*WheelSize*9/256;
-							Distance := Distance+Rotations*WheelSize*41/4096;
-							value <= Speed;
+						if (Counter >= 1000) then																			 
+							Speed := Rotations*WheelSize*9/256; --obliczamy speed w km/h
+							Distance := Distance+Rotations*WheelSize;							
 							Counter :=to_unsigned(0,16);
 							Rotations :=to_unsigned(0,8);
 						else
 							Counter := Counter + 1;
 						end if;				
-						mode <= "10";					
+						mode <= "10";
+						value <= Speed;						
 						State := ST_SPEED;					
 					end if;		
 				when ST_DIST =>	-- wyœwietlanie dystansu
 					if modeSpeed='1' and modeDist='0' then
 						mode <= "10";					
 						State := ST_SPEED;
+					elsif modeSpeed='0' and modeDist='0' then						
+						State := ST_IDLE;
 					else
 						-- wykrycie obrotu ko³a 
 						if rotSignal='1' and oldRotSignal='0' then
@@ -118,17 +125,18 @@ begin
 						elsif rotSignal='0' then
 							oldRotSignal:='0';
 						end if;
-						-- co sekundê oblicz prêdkoœæ i dystans i  i uaktualnij wyswietlacz
-						if (Counter >= 1000) then												
-							Speed := Rotations*WheelSize*9/256; --obliczamy speed w km/h
-							Distance := Distance+Rotations*WheelSize*5/512;
-							value <= Distance;
+						-- co sekundê oblicz dystans i uaktualnij wyswietlacz
+						if (Counter >= 1000) then																			
+							Distance := Distance+Rotations*WheelSize;							
 							Counter :=to_unsigned(0,16);
 							Rotations :=to_unsigned(0,8);
-						else
+							tempDist := ((Distance/4096)*41);							
+							value<=tempDist(31 downto 0);
+							--value<=Distance;
+						else						
 							Counter := Counter + 1;
-						end if;
-						mode <= "11";
+						end if;						
+						mode <= "11";												
 						State := ST_DIST;
 					end if;
 				when others =>		    -- go back 					
