@@ -4,7 +4,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
----use ieee.std_logic_arith.all;
+--use ieee.std_logic_arith.all;
 use IEEE.NUMERIC_STD.ALL;
 use work.all;
 
@@ -38,8 +38,7 @@ begin
 	 variable oldRotSignal: std_logic := '0';
 	 variable Rotations: unsigned(7 downto 0):= to_unsigned(0,8);
 	 variable Counter: unsigned(15 downto 0):= to_unsigned(0,16);
-	 variable Distance: unsigned(31 downto 0):= to_unsigned(0,32);
-	 variable tempDist: unsigned(63 downto 0);
+	 variable Distance: unsigned(31 downto 0):= to_unsigned(0,32);	 
 	 variable WheelSize: unsigned(7 downto 0):=to_unsigned(0,8);
 	 variable Speed: unsigned(31 downto 0):= to_unsigned(0,32);    
     begin
@@ -130,9 +129,7 @@ begin
 							Distance := Distance+Rotations*WheelSize;							
 							Counter :=to_unsigned(0,16);
 							Rotations :=to_unsigned(0,8);
-							tempDist := ((Distance/4096)*41);							
-							value<=tempDist(31 downto 0);
-							--value<=Distance;
+							value <= resize((to_unsigned(41,8)*Distance/4096),32);																					 
 						else						
 							Counter := Counter + 1;
 						end if;						
