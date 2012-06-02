@@ -98,9 +98,9 @@ begin
 						elsif rotSignal='0' then
 							oldRotSignal:='0';
 						end if;
-						-- co sekundê oblicz prêdkoœæ i dystans i  i uaktualnij wyswietlacz
-						if (Counter >= 1000) then																			 
-							Speed := Rotations*WheelSize*9/256; --obliczamy speed w km/h
+						-- co 4 sekundy oblicz prêdkoœæ i dystans i  i uaktualnij wyswietlacz
+						if (Counter >= 4000) then																			 
+							Speed := Rotations*WheelSize*9/1024; --obliczamy speed w km/h
 							Distance := Distance+Rotations*WheelSize;							
 							Counter :=to_unsigned(0,16);
 							Rotations :=to_unsigned(0,8);
@@ -125,8 +125,8 @@ begin
 						elsif rotSignal='0' then
 							oldRotSignal:='0';
 						end if;
-						-- co sekundê oblicz dystans i uaktualnij wyswietlacz
-						if (Counter >= 1000) then																			
+						-- co 4 sekundy oblicz dystans i uaktualnij wyswietlacz
+						if (Counter >= 4000) then																			
 							Distance := Distance+Rotations*WheelSize;							
 							Counter :=to_unsigned(0,16);
 							Rotations :=to_unsigned(0,8);

@@ -9,7 +9,7 @@ Target Device  : xa3s50
 Target Package : vqg100
 Target Speed   : -4
 Mapper Version : aspartan3 -- $Revision: 1.55 $
-Mapped Date    : Sat Jun 02 13:09:59 2012
+Mapped Date    : Sat Jun 02 17:28:47 2012
 
 Mapping design into LUTs...
 Running directed packing...
@@ -24,15 +24,15 @@ Design Summary:
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:           107 out of   1,536    6%
-  Number of 4 input LUTs:               307 out of   1,536   19%
+  Number of Slice Flip Flops:           105 out of   1,536    6%
+  Number of 4 input LUTs:               301 out of   1,536   19%
 Logic Distribution:
-  Number of occupied Slices:            239 out of     768   31%
-    Number of Slices containing only related logic:     239 out of     239 100%
-    Number of Slices containing unrelated logic:          0 out of     239   0%
+  Number of occupied Slices:            236 out of     768   30%
+    Number of Slices containing only related logic:     236 out of     236 100%
+    Number of Slices containing unrelated logic:          0 out of     236   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         420 out of   1,536   27%
-    Number used as logic:               307
+  Total Number of 4 input LUTs:         414 out of   1,536   26%
+    Number used as logic:               301
     Number used as a route-thru:        113
 
   The Slice Logic Distribution report is not meaningful if the design is
@@ -42,7 +42,7 @@ Logic Distribution:
   Number of MULT18X18s:                   2 out of       4   50%
   Number of BUFGMUXs:                     1 out of       8   12%
 
-Average Fanout of Non-Clock Nets:                2.55
+Average Fanout of Non-Clock Nets:                2.53
 
 Peak Memory Usage:  138 MB
 Total REAL time to MAP completion:  2 secs 

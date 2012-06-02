@@ -4,34 +4,34 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="15">
-<DesignStatistics TimeStamp="Sat Jun 02 13:10:01 2012"><group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="15">
+<DeviceUsageSummary rev="19">
+<DesignStatistics TimeStamp="Sat Jun 02 17:28:49 2012"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="19">
 <attrib name="value" value="37"/></item>
-<item name="AGG_IO" rev="15">
+<item name="AGG_IO" rev="19">
 <attrib name="value" value="37"/></item>
-<item name="AGG_SLICE" rev="15">
-<attrib name="value" value="239"/></item>
-<item name="NUM_4_INPUT_LUT" rev="15">
-<attrib name="value" value="420"/></item>
-<item name="NUM_BONDED_IOB" rev="15">
+<item name="AGG_SLICE" rev="19">
+<attrib name="value" value="236"/></item>
+<item name="NUM_4_INPUT_LUT" rev="19">
+<attrib name="value" value="414"/></item>
+<item name="NUM_BONDED_IOB" rev="19">
 <attrib name="value" value="37"/></item>
-<item name="NUM_BUFGMUX" rev="15">
+<item name="NUM_BUFGMUX" rev="19">
 <attrib name="value" value="1"/></item>
-<item name="NUM_CYMUX" rev="15">
-<attrib name="value" value="153"/></item>
-<item name="NUM_LUT_RT" rev="15">
+<item name="NUM_CYMUX" rev="19">
+<attrib name="value" value="152"/></item>
+<item name="NUM_LUT_RT" rev="19">
 <attrib name="value" value="113"/></item>
-<item name="NUM_MULT18X18" rev="15">
+<item name="NUM_MULT18X18" rev="19">
 <attrib name="value" value="2"/></item>
-<item name="NUM_MULTAND" rev="15">
+<item name="NUM_MULTAND" rev="19">
 <attrib name="value" value="2"/></item>
-<item name="NUM_SLICEL" rev="15">
-<attrib name="value" value="239"/></item>
-<item name="NUM_SLICE_FF" rev="15">
-<attrib name="value" value="107"/></item>
-<item name="NUM_XOR" rev="15">
-<attrib name="value" value="191"/></item>
+<item name="NUM_SLICEL" rev="19">
+<attrib name="value" value="236"/></item>
+<item name="NUM_SLICE_FF" rev="19">
+<attrib name="value" value="105"/></item>
+<item name="NUM_XOR" rev="19">
+<attrib name="value" value="189"/></item>
 </group>
 </DesignStatistics>
 <CmdHistory>

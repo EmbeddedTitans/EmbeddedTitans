@@ -272,7 +272,7 @@ LAB4:    xsi_set_current_line(121, ng0);
     t2 = (t0 + 1224U);
     t4 = *((char **)t2);
     t3 = *((int64 *)t4);
-    t8 = (t3 * 60000);
+    t8 = (t3 * 100000);
     t2 = (t0 + 2036);
     xsi_process_wait(t2, t8);
 

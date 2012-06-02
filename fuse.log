@@ -1,4 +1,4 @@
-Running: C:\Xilinx\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD2_isim_beh.exe -prj C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD2_beh.prj work.testFSMD2 
+Running: C:\Xilinx\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD_isim_beh.exe -prj C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD_beh.prj work.testFSMD 
 ISim O.87xd (signature 0x2f00eba5)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
@@ -7,11 +7,11 @@ Parsing VHDL file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/Embedded
 Parsing VHDL file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" into library work
 Parsing VHDL file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" into library work
 Parsing VHDL file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd" into library work
-Parsing VHDL file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD2.vhd" into library work
+Parsing VHDL file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 65584 KB
-Fuse CPU Usage: 374 ms
+Fuse CPU Usage: 390 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -19,10 +19,10 @@ Compiling architecture behavioral of entity nvsramSim [nvsramsim_default]
 Compiling architecture behavioral of entity nvsram [nvsram_default]
 Compiling architecture behavioral of entity FSMD [\FSMD(8,2)\]
 Compiling architecture structural of entity Main [\Main(8,2)\]
-Compiling architecture behavior of entity testfsmd2
+Compiling architecture behavior of entity testfsmd
 Time Resolution for simulation is 1ps.
 Waiting for 4 sub-compilation(s) to finish...
 Compiled 12 VHDL Units
-Built simulation executable C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD2_isim_beh.exe
+Built simulation executable C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD_isim_beh.exe
 Fuse Memory Usage: 81012 KB
-Fuse CPU Usage: 593 ms
+Fuse CPU Usage: 562 ms

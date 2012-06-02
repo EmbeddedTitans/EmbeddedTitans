@@ -119,7 +119,7 @@ BEGIN
       		
       -- insert stimulus here		
 		modeSpeed <= '1';			
-		wait for clk_period*60000;
+		wait for clk_period*100000;
 		modeSpeed <= '0';
 		modeDist <= '1';
       wait;

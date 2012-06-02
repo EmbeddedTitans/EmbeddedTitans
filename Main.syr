@@ -4,7 +4,7 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -296,7 +296,7 @@ Optimizing FSM <nvsram/current_state/FSM> on signal <current_state[1:2]> with us
 -------------------
 INFO:Xst:2261 - The FF/Latch <DQ_3> in Unit <nvsramSim> is equivalent to the following 2 FFs/Latches, which will be removed : <DQ_6> <DQ_7> 
 INFO:Xst:2261 - The FF/Latch <DQ_0> in Unit <nvsramSim> is equivalent to the following 4 FFs/Latches, which will be removed : <DQ_1> <DQ_2> <DQ_4> <DQ_5> 
-INFO:Xst:2261 - The FF/Latch <Speed_24> in Unit <FSMD> is equivalent to the following 7 FFs/Latches, which will be removed : <Speed_25> <Speed_26> <Speed_27> <Speed_28> <Speed_29> <Speed_30> <Speed_31> 
+INFO:Xst:2261 - The FF/Latch <Speed_22> in Unit <FSMD> is equivalent to the following 9 FFs/Latches, which will be removed : <Speed_23> <Speed_24> <Speed_25> <Speed_26> <Speed_27> <Speed_28> <Speed_29> <Speed_30> <Speed_31> 
 WARNING:Xst:1710 - FF/Latch <DQ_0> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <idata_0> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <idata_1> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
@@ -308,7 +308,7 @@ WARNING:Xst:1293 - FF/Latch <WheelSize_1> has a constant value of 0 in block <FS
 WARNING:Xst:1293 - FF/Latch <WheelSize_2> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <WheelSize_4> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <WheelSize_5> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <Speed_24> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <Speed_22> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -339,7 +339,9 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_1> (without init
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_2> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_4> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DQ_5> (without init value) has a constant value of 0 in block <nvsramSim>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <Speed_24> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <Speed_22> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_23> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_24> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_25> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_26> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_27> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
@@ -351,9 +353,7 @@ INFO:Xst:2261 - The FF/Latch <DQ_3> in Unit <nvsramSim> is equivalent to the fol
 INFO:Xst:2261 - The FF/Latch <idata_3> in Unit <nvsram> is equivalent to the following 2 FFs/Latches, which will be removed : <idata_6> <idata_7> 
 INFO:Xst:2261 - The FF/Latch <idata_0> in Unit <nvsram> is equivalent to the following 4 FFs/Latches, which will be removed : <idata_1> <idata_2> <idata_4> <idata_5> 
 WARNING:Xst:1710 - FF/Latch <idata_0> (without init value) has a constant value of 0 in block <nvsram>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <Speed_23> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_22> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_21> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <Speed_21> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_20> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_19> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_18> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
@@ -363,6 +363,8 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_15> has a con
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_14> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_13> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_12> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_11> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Speed_10> has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_31> (without init value) has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_30> (without init value) has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_29> (without init value) has a constant value of 0 in block <FSMD>. This FF/Latch will be trimmed during the optimization process.
@@ -393,8 +395,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 107
- Flip-Flops                                            : 107
+# Registers                                            : 105
+ Flip-Flops                                            : 105
 
 =========================================================================
 
@@ -423,25 +425,25 @@ Design Statistics
 # IOs                              : 37
 
 Cell Usage :
-# BELS                             : 756
+# BELS                             : 745
 #      GND                         : 1
 #      INV                         : 5
 #      LUT1                        : 81
-#      LUT2                        : 82
+#      LUT2                        : 81
 #      LUT2_D                      : 1
-#      LUT3                        : 61
+#      LUT3                        : 59
 #      LUT3_D                      : 4
-#      LUT4                        : 118
+#      LUT4                        : 115
 #      LUT4_D                      : 6
 #      LUT4_L                      : 27
 #      MULT_AND                    : 2
-#      MUXCY                       : 157
-#      MUXF5                       : 16
+#      MUXCY                       : 156
+#      MUXF5                       : 14
 #      VCC                         : 1
-#      XORCY                       : 194
-# FlipFlops/Latches                : 107
+#      XORCY                       : 192
+# FlipFlops/Latches                : 105
 #      FDC                         : 87
-#      FDCE                        : 12
+#      FDCE                        : 10
 #      FDE                         : 5
 #      FDR                         : 3
 # Clock Buffers                    : 1
@@ -458,9 +460,9 @@ Device utilization summary:
 
 Selected Device : xa3s50vqg100-4 
 
- Number of Slices:                      211  out of    768    27%  
- Number of Slice Flip Flops:            107  out of   1536     6%  
- Number of 4 input LUTs:                385  out of   1536    25%  
+ Number of Slices:                      208  out of    768    27%  
+ Number of Slice Flip Flops:            105  out of   1536     6%  
+ Number of 4 input LUTs:                379  out of   1536    24%  
  Number of IOs:                          37
  Number of bonded IOBs:                  37  out of     63    58%  
  Number of MULT18X18s:                    2  out of      4    50%  
@@ -487,7 +489,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 107   |
+clk                                | BUFGP                  | 105   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -495,7 +497,7 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-rst                                | IBUF                   | 99    |
+rst                                | IBUF                   | 97    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
@@ -514,7 +516,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 25.748ns (frequency: 38.838MHz)
-  Total number of paths / destination ports: 9508784 / 123
+  Total number of paths / destination ports: 9506372 / 119
 -------------------------------------------------------------------------
 Delay:               25.748ns (Levels of Logic = 41)
   Source:            FSMD/oldRotSignal (FF)
@@ -575,7 +577,7 @@ Delay:               25.748ns (Levels of Logic = 41)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 1942744 / 117
+  Total number of paths / destination ports: 1942260 / 113
 -------------------------------------------------------------------------
 Offset:              26.019ns (Levels of Logic = 42)
   Source:            rotSignal (PAD)
@@ -638,16 +640,16 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 27 / 27
 -------------------------------------------------------------------------
 Offset:              7.271ns (Levels of Logic = 1)
-  Source:            FSMD/value_11 (FF)
-  Destination:       value<11> (PAD)
+  Source:            FSMD/value_9 (FF)
+  Destination:       value<9> (PAD)
   Source Clock:      clk rising
 
-  Data Path: FSMD/value_11 to value<11>
+  Data Path: FSMD/value_9 to value<9>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              3   0.720   0.907  FSMD/value_11 (FSMD/value_11)
-     OBUF:I->O                 5.644          value_11_OBUF (value<11>)
+     FDC:C->Q              3   0.720   0.907  FSMD/value_9 (FSMD/value_9)
+     OBUF:I->O                 5.644          value_9_OBUF (value<9>)
     ----------------------------------------
     Total                      7.271ns (6.364ns logic, 0.907ns route)
                                        (87.5% logic, 12.5% route)
@@ -656,13 +658,13 @@ Offset:              7.271ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 12.31 secs
+Total CPU time to Xst completion: 12.20 secs
  
 --> 
 
 Total memory usage is 154068 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   54 (   0 filtered)
+Number of warnings :   56 (   0 filtered)
 Number of infos    :   10 (   0 filtered)
 

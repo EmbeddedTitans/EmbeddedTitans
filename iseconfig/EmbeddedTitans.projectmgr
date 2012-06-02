@@ -8,7 +8,6 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/FSMD - Behavioral C:|Documents and Settings|AssA|Moje dokumenty|Xilinx|EmbeddedTitans|FSMD.vhd</ClosedNode>
-         <ClosedNode>/Main - Structural C:|Documents and Settings|AssA|Moje dokumenty|Xilinx|EmbeddedTitans|Main.vhd</ClosedNode>
          <ClosedNode>/Main - Structural C:|Documents and Settings|AssA|Moje dokumenty|Xilinx|EmbeddedTitans|Main.vhd/nvsram - nvsram - Behavioral</ClosedNode>
          <ClosedNode>/nvsram - Behavioral C:|Documents and Settings|AssA|Moje dokumenty|Xilinx|EmbeddedTitans|nvsram.vhd</ClosedNode>
       </ClosedNodes>
@@ -17,7 +16,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000da000000020000000000000000000000000200000064ffffffff000000810000000300000002000000da0000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000158000000020000000000000000000000000200000064ffffffff000000810000000300000002000001580000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>Main - Structural (C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd)</CurrentItem>
    </ItemView>
@@ -67,44 +66,44 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>View RTL Schematic</SelectedItem>
+         <SelectedItem>Synthesize - XST</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>View RTL Schematic</CurrentItem>
+      <CurrentItem>Synthesize - XST</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/nvsramtest - behavior C:|Documents and Settings|AssA|Moje dokumenty|Xilinx|EmbeddedTitans|nvsramtest.vhd</ClosedNode>
          <ClosedNode>/testFSMD - behavior C:|Documents and Settings|AssA|Moje dokumenty|Xilinx|EmbeddedTitans|testFSMD.vhd</ClosedNode>
+         <ClosedNode>/testFSMD2 - behavior C:|Documents and Settings|AssA|Moje dokumenty|Xilinx|EmbeddedTitans|testFSMD2.vhd</ClosedNode>
          <ClosedNode>/testbench - behavior C:|Documents and Settings|AssA|Moje dokumenty|Xilinx|EmbeddedTitans|FSMDtest.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>testFSMD - behavior (C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD.vhd)</SelectedItem>
+         <SelectedItem>testFSMD2 - behavior (C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD2.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000105000000020000000000000000000000000200000064ffffffff000000810000000300000002000001050000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>testFSMD - behavior (C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD.vhd)</CurrentItem>
+      <CurrentItem>testFSMD2 - behavior (C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD2.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
-         <ClosedNode>ISim Simulator</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
