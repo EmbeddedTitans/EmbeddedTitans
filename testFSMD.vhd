@@ -37,7 +37,7 @@ ARCHITECTURE behavior OF testFSMD IS
 			rotSignal: in std_logic;					
 			modeSpeed: in std_logic;
 			modeDist: in std_logic;			
-			value : OUT unsigned(31 downto 0)
+			value : OUT unsigned(15 downto 0)
 			--tu bêd¹ te¿ wszystkie wyprowadzenia do wyœwietlacza
 		);
 		END COMPONENT;
@@ -49,7 +49,7 @@ ARCHITECTURE behavior OF testFSMD IS
    signal rst : std_logic := '0';   
 	signal modeSpeed : std_logic := '0';
    signal modeDist : std_logic := '0';
-	signal value : unsigned(31 downto 0) := to_unsigned(0,32);
+	signal value : unsigned(15 downto 0) := to_unsigned(0,16);
 --   signal LCDready : std_logic := '0';   
 --   signal NVRAMinput : unsigned(7 downto 0) := (others => '0');
 

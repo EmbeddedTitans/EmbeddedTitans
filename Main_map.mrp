@@ -9,35 +9,35 @@ Target Device  : xa3s50
 Target Package : vqg100
 Target Speed   : -4
 Mapper Version : aspartan3 -- $Revision: 1.55 $
-Mapped Date    : Sat Jun 02 18:29:51 2012
+Mapped Date    : Sun Jun 03 09:32:19 2012
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:           107 out of   1,536    6%
-  Number of 4 input LUTs:               272 out of   1,536   17%
+  Number of Slice Flip Flops:            91 out of   1,536    5%
+  Number of 4 input LUTs:               256 out of   1,536   16%
 Logic Distribution:
-  Number of occupied Slices:            208 out of     768   27%
-    Number of Slices containing only related logic:     208 out of     208 100%
-    Number of Slices containing unrelated logic:          0 out of     208   0%
+  Number of occupied Slices:            166 out of     768   21%
+    Number of Slices containing only related logic:     166 out of     166 100%
+    Number of Slices containing unrelated logic:          0 out of     166   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         365 out of   1,536   23%
-    Number used as logic:               272
-    Number used as a route-thru:         93
+  Total Number of 4 input LUTs:         297 out of   1,536   19%
+    Number used as logic:               256
+    Number used as a route-thru:         41
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                 37 out of      63   58%
-  Number of MULT18X18s:                   4 out of       4  100%
+  Number of bonded IOBs:                 21 out of      63   33%
+  Number of MULT18X18s:                   3 out of       4   75%
   Number of BUFGMUXs:                     1 out of       8   12%
 
-Average Fanout of Non-Clock Nets:                2.52
+Average Fanout of Non-Clock Nets:                2.72
 
 Peak Memory Usage:  138 MB
-Total REAL time to MAP completion:  2 secs 
+Total REAL time to MAP completion:  1 secs 
 Total CPU time to MAP completion:   1 secs 
 
 NOTES:
@@ -88,7 +88,7 @@ INFO:LIT:244 - All of the single ended outputs in this design are using slew
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-   4 block(s) optimized away
+   2 block(s) optimized away
 
 Section 5 - Removed Logic
 -------------------------
@@ -97,8 +97,6 @@ Optimized Block(s):
 TYPE 		BLOCK
 GND 		XST_GND
 VCC 		XST_VCC
-MUXCY 		FSMD/Madd_value_add0000_cy<0>
-MUXCY 		FSMD/Mmult_value_mult0001_Madd5_cy<6>
 
 To enable printing of redundant blocks removed and signals merged, set the
 detailed map report option and rerun map.
@@ -131,22 +129,6 @@ Section 6 - IOB Properties
 | value<13>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | value<14>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | value<15>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<16>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<17>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<18>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<19>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<20>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<21>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<22>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<23>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<24>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<25>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<26>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<27>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<28>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<29>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<30>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
-| value<31>                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs

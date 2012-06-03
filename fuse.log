@@ -11,7 +11,7 @@ Parsing VHDL file "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/Embedded
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 65584 KB
-Fuse CPU Usage: 327 ms
+Fuse CPU Usage: 390 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -21,7 +21,8 @@ Compiling architecture behavioral of entity FSMD [\FSMD(8,2)\]
 Compiling architecture structural of entity Main [\Main(8,2)\]
 Compiling architecture behavior of entity testfsmd2
 Time Resolution for simulation is 1ps.
+Waiting for 4 sub-compilation(s) to finish...
 Compiled 12 VHDL Units
 Built simulation executable C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD2_isim_beh.exe
 Fuse Memory Usage: 81012 KB
-Fuse CPU Usage: 531 ms
+Fuse CPU Usage: 624 ms

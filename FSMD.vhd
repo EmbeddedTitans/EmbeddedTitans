@@ -23,7 +23,7 @@ port(
 	NVRAMready: in std_logic;	
 	NVRAMenable: out std_logic;		
 	mode:	out unsigned(width2-1 downto 0);	-- tryb dzia³ania wyœwietlacza
-	value:	out unsigned(31 downto 0)	-- wartoœæ do wyœwietlenia na wyœwietlaczu
+	value:	out unsigned(15 downto 0)	-- wartoœæ do wyœwietlenia na wyœwietlaczu
 );
 end FSMD;
 
@@ -54,7 +54,7 @@ begin
 			case State is				
 				when ST_INIT =>	-- starting
 					mode <= "00";
-					value <= to_unsigned(0,32);
+					value <= to_unsigned(0,16);
 					if(NVRAMready='1') then
 						NVRAMenable <='1';										
 						State:=ST_LOAD;
@@ -73,7 +73,7 @@ begin
 					end if;
 				when ST_IDLE =>	-- idle state 
 					mode <= "01";											
-					value <= to_unsigned(0,32);
+					value <= to_unsigned(0,16);
 					if(modeSpeed='1') then
 						State:=ST_SPEED;
 					elsif(modeDist='1') then
@@ -107,7 +107,7 @@ begin
 							Counter := Counter + 1;
 						end if;				
 						mode <= "10";
-						value <= Speed;						
+						value <= resize(Speed,16);						
 						State := ST_SPEED;					
 					end if;		
 				when ST_DIST =>	-- wyœwietlanie dystansu
@@ -129,7 +129,7 @@ begin
 							Distance := Distance+Rotations*WheelSize;							
 							Counter :=to_unsigned(0,16);
 							Rotations :=to_unsigned(0,8);
-							value <= resize((to_unsigned(41,8)*Distance/4096),32);																					 
+							value <= resize((to_unsigned(41,8)*Distance/4096),16);																					 
 						else						
 							Counter := Counter + 1;
 						end if;						

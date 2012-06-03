@@ -2,28 +2,28 @@ Command line:
    testFSMD_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  4417
+     -socket  4077
 
-Sat Jun 02 18:30:22 2012
+Sun Jun 03 09:32:45 2012
 
 
- Elaboration Time: 0.0625 sec
+ Elaboration Time: 0.046875 sec
 
  Current Memory Usage: 312.218 Meg
 
  Total Signals          : 51
- Total Nets             : 105
+ Total Nets             : 89
  Total Signal Drivers   : 17
  Total Blocks           : 7
  Total Primitive Blocks : 5
  Total Processes        : 7
  Total Traceable Variables  : 19
- Total Scalar Nets and Variables : 594
+ Total Scalar Nets and Variables : 578
 Total Line Count : 112
 
  Total Simulation Time: 0.9375 sec
 
  Current Memory Usage: 312.218 Meg
 
-Sat Jun 02 18:31:25 2012
+Sun Jun 03 09:33:29 2012
 

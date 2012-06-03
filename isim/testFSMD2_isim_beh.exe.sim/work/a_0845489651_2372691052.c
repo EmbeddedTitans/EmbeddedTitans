@@ -140,9 +140,9 @@ LAB6:    *((char **)t1) = &&LAB7;
 
 LAB1:    return;
 LAB4:    xsi_set_current_line(103, ng0);
-    t2 = (t0 + 4780);
+    t2 = (t0 + 4764);
     *((int *)t2) = 1;
-    t4 = (t0 + 4784);
+    t4 = (t0 + 4768);
     *((int *)t4) = 100;
     t8 = 1;
     t9 = 100;
@@ -175,16 +175,16 @@ LAB9:    xsi_set_current_line(104, ng0);
 LAB14:    *((char **)t1) = &&LAB15;
     goto LAB1;
 
-LAB10:    t2 = (t0 + 4780);
+LAB10:    t2 = (t0 + 4764);
     t8 = *((int *)t2);
-    t4 = (t0 + 4784);
+    t4 = (t0 + 4768);
     t9 = *((int *)t4);
     if (t8 == t9)
         goto LAB11;
 
 LAB20:    t14 = (t8 + 1);
     t8 = t14;
-    t5 = (t0 + 4780);
+    t5 = (t0 + 4764);
     *((int *)t5) = t8;
     goto LAB8;
 

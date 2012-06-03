@@ -13,7 +13,7 @@ port(
 	rotSignal: in std_logic;			
 	modeSpeed: in std_logic;
 	modeDist: in std_logic;	
-	value: out unsigned(31 downto 0) -- to nie bêdzie jako sygna³ wyjœciowy, ale póki co bez tego siê nie zsyntetyzuje
+	value: out unsigned(15 downto 0) -- to nie bêdzie jako sygna³ wyjœciowy, ale póki co bez tego siê nie zsyntetyzuje
 	--tu bêd¹ wszystkie wyprowadzenia do wyœwietlacza
 );
 end Main;
