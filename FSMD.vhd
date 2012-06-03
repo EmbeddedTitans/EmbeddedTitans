@@ -129,7 +129,7 @@ begin
 							Distance := Distance+Rotations*WheelSize;							
 							Counter :=to_unsigned(0,16);
 							Rotations :=to_unsigned(0,8);
-							value <= resize((to_unsigned(41,8)*Distance/4096),16);																					 
+							value <= resize(((to_unsigned(1640,16)*Distance)/4096/4096),16);																					 
 						else						
 							Counter := Counter + 1;
 						end if;						

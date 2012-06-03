@@ -60,7 +60,7 @@ ARCHITECTURE behavior OF testFSMD IS
    -- Clock period definitions
    constant clk_period : time := 1 ms;
 	
-	constant rotSignal_period : time := 500 ms;
+	constant rotSignal_period : time := 200 ms;
  
 BEGIN
  

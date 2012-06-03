@@ -44,10 +44,10 @@ Setup/Hold to clock clk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-modeDist    |    6.114(R)|    0.133(R)|clk_BUFGP         |   0.000|
-modeSpeed   |    6.344(R)|   -0.335(R)|clk_BUFGP         |   0.000|
-rotSignal   |   19.133(R)|   -1.000(R)|clk_BUFGP         |   0.000|
-rst         |    4.400(R)|   -0.436(R)|clk_BUFGP         |   0.000|
+modeDist    |    8.637(R)|   -0.539(R)|clk_BUFGP         |   0.000|
+modeSpeed   |    8.211(R)|   -0.463(R)|clk_BUFGP         |   0.000|
+rotSignal   |   25.665(R)|   -0.154(R)|clk_BUFGP         |   0.000|
+rst         |    3.918(R)|    0.062(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -55,22 +55,22 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-value<0>    |    9.263(R)|clk_BUFGP         |   0.000|
-value<1>    |    9.123(R)|clk_BUFGP         |   0.000|
-value<2>    |    9.924(R)|clk_BUFGP         |   0.000|
-value<3>    |    9.981(R)|clk_BUFGP         |   0.000|
-value<4>    |    9.149(R)|clk_BUFGP         |   0.000|
-value<5>    |    9.464(R)|clk_BUFGP         |   0.000|
-value<6>    |    8.988(R)|clk_BUFGP         |   0.000|
-value<7>    |    9.900(R)|clk_BUFGP         |   0.000|
-value<8>    |    9.614(R)|clk_BUFGP         |   0.000|
-value<9>    |    9.612(R)|clk_BUFGP         |   0.000|
-value<10>   |    9.150(R)|clk_BUFGP         |   0.000|
-value<11>   |    8.784(R)|clk_BUFGP         |   0.000|
-value<12>   |    9.309(R)|clk_BUFGP         |   0.000|
-value<13>   |    8.785(R)|clk_BUFGP         |   0.000|
-value<14>   |    8.840(R)|clk_BUFGP         |   0.000|
-value<15>   |    8.810(R)|clk_BUFGP         |   0.000|
+value<0>    |    9.333(R)|clk_BUFGP         |   0.000|
+value<1>    |    8.940(R)|clk_BUFGP         |   0.000|
+value<2>    |    8.876(R)|clk_BUFGP         |   0.000|
+value<3>    |    9.081(R)|clk_BUFGP         |   0.000|
+value<4>    |    9.157(R)|clk_BUFGP         |   0.000|
+value<5>    |    9.798(R)|clk_BUFGP         |   0.000|
+value<6>    |    9.129(R)|clk_BUFGP         |   0.000|
+value<7>    |    8.768(R)|clk_BUFGP         |   0.000|
+value<8>    |    9.659(R)|clk_BUFGP         |   0.000|
+value<9>    |    8.525(R)|clk_BUFGP         |   0.000|
+value<10>   |    8.500(R)|clk_BUFGP         |   0.000|
+value<11>   |    8.873(R)|clk_BUFGP         |   0.000|
+value<12>   |   10.162(R)|clk_BUFGP         |   0.000|
+value<13>   |   10.472(R)|clk_BUFGP         |   0.000|
+value<14>   |    9.619(R)|clk_BUFGP         |   0.000|
+value<15>   |    8.524(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -78,18 +78,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   18.681|         |         |         |
+clk            |   25.985|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sun Jun 03 09:32:36 2012 
+Analysis completed Sun Jun 03 09:51:46 2012 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 81 MB
+Peak Memory Usage: 82 MB
 
 
 

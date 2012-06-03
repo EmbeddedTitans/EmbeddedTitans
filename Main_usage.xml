@@ -4,32 +4,34 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="29">
-<DesignStatistics TimeStamp="Sun Jun 03 09:32:20 2012"><group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="29">
+<DeviceUsageSummary rev="32">
+<DesignStatistics TimeStamp="Sun Jun 03 09:51:27 2012"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="32">
 <attrib name="value" value="21"/></item>
-<item name="AGG_IO" rev="29">
+<item name="AGG_IO" rev="32">
 <attrib name="value" value="21"/></item>
-<item name="AGG_SLICE" rev="29">
-<attrib name="value" value="166"/></item>
-<item name="NUM_4_INPUT_LUT" rev="29">
-<attrib name="value" value="297"/></item>
-<item name="NUM_BONDED_IOB" rev="29">
+<item name="AGG_SLICE" rev="32">
+<attrib name="value" value="200"/></item>
+<item name="NUM_4_INPUT_LUT" rev="32">
+<attrib name="value" value="349"/></item>
+<item name="NUM_BONDED_IOB" rev="32">
 <attrib name="value" value="21"/></item>
-<item name="NUM_BUFGMUX" rev="29">
+<item name="NUM_BUFGMUX" rev="32">
 <attrib name="value" value="1"/></item>
-<item name="NUM_CYMUX" rev="29">
-<attrib name="value" value="120"/></item>
-<item name="NUM_LUT_RT" rev="29">
-<attrib name="value" value="41"/></item>
-<item name="NUM_MULT18X18" rev="29">
-<attrib name="value" value="3"/></item>
-<item name="NUM_SLICEL" rev="29">
-<attrib name="value" value="166"/></item>
-<item name="NUM_SLICE_FF" rev="29">
-<attrib name="value" value="91"/></item>
-<item name="NUM_XOR" rev="29">
-<attrib name="value" value="111"/></item>
+<item name="NUM_CYMUX" rev="32">
+<attrib name="value" value="128"/></item>
+<item name="NUM_LUT_RT" rev="32">
+<attrib name="value" value="90"/></item>
+<item name="NUM_MULT18X18" rev="32">
+<attrib name="value" value="4"/></item>
+<item name="NUM_MULTAND" rev="32">
+<attrib name="value" value="1"/></item>
+<item name="NUM_SLICEL" rev="32">
+<attrib name="value" value="200"/></item>
+<item name="NUM_SLICE_FF" rev="32">
+<attrib name="value" value="95"/></item>
+<item name="NUM_XOR" rev="32">
+<attrib name="value" value="141"/></item>
 </group>
 </DesignStatistics>
 <CmdHistory>

@@ -1,8 +1,8 @@
-AR fsmd behavioral "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" sub00/vhpl05 1338708727
-AR nvsramsim behavioral "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsramSim.vhd" sub00/vhpl01 1338708723
-EN fsmd NULL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" sub00/vhpl04 1338708726
-EN main NULL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd" sub00/vhpl06 1338708728
-EN nvsramsim NULL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsramSim.vhd" sub00/vhpl00 1338708722
-EN nvsram NULL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" sub00/vhpl02 1338708724
-AR nvsram behavioral "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" sub00/vhpl03 1338708725
-AR main structural "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd" sub00/vhpl07 1338708729
+AR fsmd behavioral "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" sub00/vhpl05 1338709873
+AR nvsramsim behavioral "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsramSim.vhd" sub00/vhpl01 1338709869
+EN fsmd NULL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/FSMD.vhd" sub00/vhpl04 1338709872
+EN main NULL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd" sub00/vhpl06 1338709874
+EN nvsramsim NULL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsramSim.vhd" sub00/vhpl00 1338709868
+EN nvsram NULL "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" sub00/vhpl02 1338709870
+AR nvsram behavioral "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/nvsram.vhd" sub00/vhpl03 1338709871
+AR main structural "C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/Main.vhd" sub00/vhpl07 1338709875

@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Documents and Settings\AssA\Moje dokumenty\Xilinx\EmbeddedTitans\testFSMD2_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD2_isim_beh.wdb 
+Running: C:\Documents and Settings\AssA\Moje dokumenty\Xilinx\EmbeddedTitans\testFSMD_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Documents and Settings/AssA/Moje dokumenty/Xilinx/EmbeddedTitans/testFSMD_isim_beh.wdb 
 ISim O.87xd (signature 0x2f00eba5)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
